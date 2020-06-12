@@ -1,0 +1,19 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "Сервис для обмена книгами, а так же нахождения их по всему городу в буккроссинговых точках.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "book",
+    "bookcrossing"
+  ],
+  "author": "Sergey Katkov <katkov.syy@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
