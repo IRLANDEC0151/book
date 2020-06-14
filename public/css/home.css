@@ -1,0 +1,140 @@
+header {
+  height: 65rem;
+  background-image: url(https://kudago.com/media/images/list/58/d7/58d734c95f77960b95f1e7efa6d12915.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+}
+nav .navbar-brand {
+  font-size: 3rem;
+}
+nav a {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+}
+.search {
+  text-align: center;
+}
+.search-header {
+  margin-top: 6rem;
+}
+.search-header p {
+  font-size: 7rem;
+  color: white;
+}
+.search-nav .nav-pills {
+  margin: 0 auto;
+}
+.search-nav .nav-item {
+  margin: 8rem 5rem 0 5rem;
+  width: 31rem;
+}
+.search-nav .nav-link {
+  font-size: 2.5rem;
+  color: white;
+  border: 4px solid white;
+}
+.search-nav-first {
+  margin-top: 7rem;
+}
+.search-nav-first form {
+  display: flex;
+  justify-content: center;
+}
+.search-nav-first form .form-group {
+  width: 60%;
+}
+.search-nav-first form .form-group input {
+  width: 100%;
+  font-size: 2rem;
+  padding: 2.5rem;
+}
+.search-nav-first form button {
+  margin-left: 1rem;
+  height: 5.2rem;
+  font-size: 2rem;
+  padding: 0 1.5rem;
+}
+.search-add {
+  background-color: #DAF8FC;
+  text-align: center;
+  padding: 4rem;
+}
+.search-add button {
+  border: none;
+  font-size: 2.7rem;
+  margin: 3rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.search-add p {
+  margin: 0 auto;
+  width: 50%;
+  font-size: 3rem;
+}
+.map {
+  background-color: white;
+}
+.map-header {
+  margin: 4rem 0;
+  text-align: center;
+}
+.map-header p {
+  font-size: 6rem;
+}
+.map-info {
+  background-color: #f58787;
+}
+.addbook {
+  background-color: #fff492;
+  padding: 5rem 0;
+  margin-bottom: 20rem;
+}
+.addbook-header {
+  text-align: center;
+  margin-bottom: 5rem ;
+}
+.addbook-header-title {
+  font-size: 4.3rem;
+}
+.addbook-header-description {
+  font-size: 2.7rem;
+}
+.addbook .nav-link {
+  font-size: 2.5rem;
+}
+.addbook .nav-pills {
+  width: fit-content;
+}
+.addbook-steps-number {
+  font-size: 4rem;
+}
+.addbook-steps-instruction {
+  font-size: 2rem;
+}
+.addbook-bringbook {
+  padding: 1rem;
+  font-size: 2rem;
+  margin-top: 4rem;
+  background-color: #ff9100;
+  color: white;
+  transition-duration: 0.5s;
+  border: 2px solid white;
+}
+.addbook-bringbook:hover {
+  color: #2b2b2b;
+  background-color: #f0730d;
+  text-decoration: none;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}

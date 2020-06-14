@@ -1,0 +1,313 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img
+      src="https://pngicon.ru/file/uploads/gory.png"
+      width="50"
+      height="50"
+      class="d-inline-block align-top"
+      alt=""
+      loading="lazy"
+    />
+    <a class="navbar-brand" href="/">Перекресток книг</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#">Библиотека</a>
+        <a class="nav-item nav-link" href="#">Места</a>
+        <a class="nav-item nav-link" href="#">О проекте</a>
+      </div>
+      <div class="navbar-nav navbar-collapse justify-content-end">
+        <a class="nav-item nav-link" href="#">Регистрация</a>
+        <a class="nav-item nav-link" href="#">Войти</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 search">
+        <div class="search-header">
+          <p>Книга найдется для каждого</p>
+        </div>
+        <div class="search-nav">
+          <ul
+            class="nav nav-pills justify-content-center"
+            id="pills-tab"
+            role="tablist"
+          >
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link active"
+                id="pills-home-tab"
+                data-toggle="pill"
+                href="#pills-home"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+                >Найти книгу</a
+              >
+            </li>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link"
+                id="pills-profile-tab"
+                data-toggle="pill"
+                href="#pills-profile"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+                >Обновить статус книги</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content search-nav-first" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-home"
+              role="tabpanel"
+              aria-labelledby="pills-home-tab"
+            >
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="inputPassword2" class="sr-only">Password</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword2"
+                    placeholder="Автор или произведение"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Поиск книги
+                </button>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-profile"
+              role="tabpanel"
+              aria-labelledby="pills-profile-tab"
+            >
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="inputPassword2" class="sr-only">Password</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword2"
+                    placeholder="Анти-кафе, станция метро или парк"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Поиск места
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  {{!-- кнопка добавить книгу --}}
+  <section>
+    <div class="div search-add">
+      <p>
+        Если у вас есть лишняя книга, добавьте ее на сайт, или найдите место,
+        где ее можно оставить на книжкой полке в городе
+      </p>
+      <button class="btn btn-info">Добавить свою книгу</button>
+    </div>
+  </section>
+
+  {{!-- карта --}}
+  <section>
+    <div class="container-fluid map">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="map-header">
+            <p>Найдите любую книгу на карте</p>
+          </div>
+        </div>
+      </div>
+      <div class="row offset-xl-1">
+        <div class="col-xl-6 mr-5 col-lg-8">
+          <div class="map-map">
+            <iframe
+              {{!--
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Aadfef963d7d6a9c8f1ecaaa7ad217284f73523515ece6c175a6242ec7b643beb&amp;source=constructor"
+              --}}
+              width="100%"
+              height="700"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-4 ml-5 map-info"></div>
+      </div>
+    </div>
+  </section>
+  {{!-- форма с добавлением книги --}}
+  <section class="addbook">
+    <div class="container">
+      <div class="addbook-header">
+        <p class="addbook-header-title">Добавить свою книгу</p>
+        <hr />
+        <p class="addbook-header-description">
+          Для современного мира социально-экономическое развитие обеспечивает
+          актуальность укрепления демократической системы.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div
+            class="nav flex-column nav-pills"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="v-pills-home-tab"
+              data-toggle="pill"
+              href="#v-pills-home"
+              role="tab"
+              aria-controls="v-pills-home"
+              aria-selected="true"
+              >О книге</a
+            >
+            <a
+              class="nav-link"
+              id="v-pills-profile-tab"
+              data-toggle="pill"
+              href="#v-pills-profile"
+              role="tab"
+              aria-controls="v-pills-profile"
+              aria-selected="false"
+              >Где забрать</a
+            >
+            <a class="addbook-bringbook" href="#dc"
+              >Куда я могу отнести книгу?</a
+            >
+          </div>
+        </div>
+        <div class="col-4 addbook-steps">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-home"
+              role="tabpanel"
+              aria-labelledby="v-pills-home-tab"
+            >
+              <p class="addbook-steps-number">Шаг 1 из 2</p>
+              <p class="addbook-steps-instruction">
+                Расскажите о книге, которой вы хотите поделиться
+              </p>
+
+              <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Автор</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Название книги"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"></label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Автор"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputPassword1">Добавьте не более 3 жанров, описывающих книгу</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Фантастика..."
+                  />
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Check me out</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Подтвердить
+                </button>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-profile"
+              role="tabpanel"
+              aria-labelledby="v-pills-profile-tab"
+            >
+              <p class="addbook-steps-number">Шаг 2 из 2</p>
+              <p class="addbook-steps-instruction">
+                Укажите краткую информацию о себе и о месте, где вы можете
+                отдать книгу
+              </p>
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="text"
+                    class="register-input"
+                    placeholder="Enter email"
+                  />
+                  <span> <img src="/mail.svg" alt="register-img" /></span>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="register-input"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Check me out</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
