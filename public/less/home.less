@@ -5,14 +5,14 @@ header {
   background-repeat: no-repeat;
   background-color: #cccccc;
 }
-nav{
-   .navbar-brand{
-      font-size: 3rem;
-   }
-   a{
-      font-size: 1.7rem;
-      margin: 0 1rem;
-   }
+nav {
+  .navbar-brand {
+    font-size: 3rem;
+  }
+  a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+  }
 }
 .search {
   text-align: center;
@@ -24,18 +24,17 @@ nav{
     }
   }
   &-nav {
-     .nav-pills{
+    .nav-pills {
       margin: 0 auto;
-     }
+    }
     .nav-item {
       margin: 8rem 5rem 0 5rem;
       width: 31rem;
     }
-    .nav-link{
-       font-size: 2.5rem;
-       color: white;
-       border: 4px solid white;
-      
+    .nav-link {
+      font-size: 2.5rem;
+      color: white;
+      border: 4px solid white;
     }
     &-first {
       margin-top: 7rem;
@@ -45,12 +44,13 @@ nav{
 
         .form-group {
           width: 60%;
-
+         
           input {
             width: 100%;
             font-size: 2rem;
             padding: 2.5rem;
           }
+         
         }
         button {
           margin-left: 1rem;
@@ -62,86 +62,141 @@ nav{
     }
   }
 
-  &-add{
-    background-color:#DAF8FC;
+  &-add {
+    background-color: #daf8fc;
     text-align: center;
     padding: 4rem;
-    button{
-      
+    button {
       border: none;
       font-size: 2.7rem;
       margin: 3rem 0;
       padding-left: 2rem;
       padding-right: 2rem;
     }
-    p{
+    p {
       margin: 0 auto;
-      width: 50%;
-      font-size: 3rem;
+      width: 60%;
+      font-size: 2.4rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
     }
   }
 }
 
-.map{
+.map {
   background-color: white;
-   &-header{
-     margin: 4rem 0;
-     text-align: center;
-     p{
-       font-size: 6rem;
-     }
-   }
+  &-header {
+    margin: 4rem 0;
+    text-align: center;
+    p {
+      font-size: 6rem;
+    }
+  }
 
-   &-info{
-     background-color: rgb(245, 135, 135);
-   }
+  &-info {
+    background-color: rgb(245, 135, 135);
+  }
 }
-.addbook{
-  background-color: rgb(255, 244, 146);
+.addbook {
+  background-color: rgb(219, 235, 133);
   padding: 5rem 0;
   margin-bottom: 20rem;
-  &-header{
+  &-header {
     text-align: center;
-    margin-bottom:5rem ;
-    &-title{
+    &-title {
       font-size: 4.3rem;
     }
-    &-description{
-      font-size: 2.7rem;
-      
+    &-description {
+      margin-top: 4rem;
+      font-size: 2.5rem;
+    }
+    hr {
+      margin: 8rem auto;
+      width: 90%;
     }
   }
-  .nav-link{
-    font-size: 2.5rem;
+  .form-group {
+    margin: 1.5rem 0;
+    position: relative;
+    label {
+      font-size: 1.4rem;
+      color: rgb(78, 78, 80);
+    }
+    input {
+      font-size: 2rem;
+      border-radius: 2rem;
+    }
+    span{
+      display: flex;
+      align-items: center;
+      position: absolute;
+      height: 100%;
+      cursor: pointer;
+      bottom: -1.1rem;
+      right: 15rem;
+    }
   }
-  .nav-pills{
+  .form-control {
+    padding: 2.3rem;
+    width: 60%;
+  }
+  .nav-link {
+    font-size: 2.5rem;
+    width: 87%;
+  }
+  .nav-pills {
     width: fit-content;
   }
-  &-steps{
-    &-number{
+  &-steps {
+    &-number {
       font-size: 4rem;
     }
-    &-instruction{
+    &-instruction {
+      font-size: 2rem;
+      &-sub {
+        font-size: 1.5rem;
+        color: rgb(209, 108, 108);
+      }
+    }
+
+    img {
+      margin-right: 1rem;
+    }
+    button {
+      margin-top: 2.5rem;
       font-size: 2rem;
     }
   }
 
-  &-bringbook{
+  &-bringbook {
+    width: 87%;
+    text-align: center;
     padding: 1rem;
     font-size: 2rem;
-    margin-top: 4rem;
+    margin-top: 6rem;
     background-color: rgb(255, 145, 0);
     color: white;
     transition-duration: 0.5s;
-    border: 2px solid white;
-    &:hover{
-      color: rgb(43, 43, 43);
-      background-color: rgb(240, 115, 13);
+    border: 4px solid white;
+    &-text {
+      width: 87%;
+      margin-top: 1rem;
+      font-size: 1.7rem;
+      text-align: center;
+      color: rgb(255, 145, 0);
+    }
+    &:hover {
+      color: rgb(43, 42, 42);
+      background-color: rgb(247, 135, 44);
       text-decoration: none;
     }
   }
+  &-addSocialWebBtn {
+    display: block;
+  }
 }
-
 
 input:focus::-webkit-input-placeholder {
   color: transparent;

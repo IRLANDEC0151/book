@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
       res.render("home", {
         title: "Главная страница",
         style: "/home.css",
+        script: "/home.js",
 
     });
   });

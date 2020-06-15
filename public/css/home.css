@@ -56,7 +56,7 @@ nav a {
   padding: 0 1.5rem;
 }
 .search-add {
-  background-color: #DAF8FC;
+  background-color: #daf8fc;
   text-align: center;
   padding: 4rem;
 }
@@ -69,8 +69,12 @@ nav a {
 }
 .search-add p {
   margin: 0 auto;
-  width: 50%;
-  font-size: 3rem;
+  width: 60%;
+  font-size: 2.4rem;
+}
+.search-add a {
+  text-decoration: none;
+  color: white;
 }
 .map {
   background-color: white;
@@ -86,22 +90,52 @@ nav a {
   background-color: #f58787;
 }
 .addbook {
-  background-color: #fff492;
+  background-color: #dbeb85;
   padding: 5rem 0;
   margin-bottom: 20rem;
 }
 .addbook-header {
   text-align: center;
-  margin-bottom: 5rem ;
 }
 .addbook-header-title {
   font-size: 4.3rem;
 }
 .addbook-header-description {
-  font-size: 2.7rem;
+  margin-top: 4rem;
+  font-size: 2.5rem;
+}
+.addbook-header hr {
+  margin: 8rem auto;
+  width: 90%;
+}
+.addbook .form-group {
+  margin: 1.5rem 0;
+  position: relative;
+}
+.addbook .form-group label {
+  font-size: 1.4rem;
+  color: #4e4e50;
+}
+.addbook .form-group input {
+  font-size: 2rem;
+  border-radius: 2rem;
+}
+.addbook .form-group span {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+  bottom: -1.1rem;
+  right: 15rem;
+}
+.addbook .form-control {
+  padding: 2.3rem;
+  width: 60%;
 }
 .addbook .nav-link {
   font-size: 2.5rem;
+  width: 87%;
 }
 .addbook .nav-pills {
   width: fit-content;
@@ -112,19 +146,42 @@ nav a {
 .addbook-steps-instruction {
   font-size: 2rem;
 }
+.addbook-steps-instruction-sub {
+  font-size: 1.5rem;
+  color: #d16c6c;
+}
+.addbook-steps img {
+  margin-right: 1rem;
+}
+.addbook-steps button {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+}
 .addbook-bringbook {
+  width: 87%;
+  text-align: center;
   padding: 1rem;
   font-size: 2rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
   background-color: #ff9100;
   color: white;
   transition-duration: 0.5s;
-  border: 2px solid white;
+  border: 4px solid white;
+}
+.addbook-bringbook-text {
+  width: 87%;
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #ff9100;
 }
 .addbook-bringbook:hover {
-  color: #2b2b2b;
-  background-color: #f0730d;
+  color: #2b2a2a;
+  background-color: #f7872c;
   text-decoration: none;
+}
+.addbook-addSocialWebBtn {
+  display: block;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

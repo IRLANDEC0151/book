@@ -122,17 +122,21 @@
 <main>
   {{!-- кнопка добавить книгу --}}
   <section>
-    <div class="div search-add">
+    <div class="search-add">
       <p>
-        Если у вас есть лишняя книга, добавьте ее на сайт, или найдите место,
-        где ее можно оставить на книжкой полке в городе
+        Если у вас дома много прочитанных книг, которые пылятся на полке и вы не
+        знаете, что с ними сделать. Или вы прочитали невероятно интересный роман
+        и скорее хотите им поделиться, то
+        <strong> Перекресток книг </strong> вам в помощь.
       </p>
-      <button class="btn btn-info">Добавить свою книгу</button>
+      <button class="btn btn-info">
+        <a href="#addBookSection">Добавить свою книгу</a>
+      </button>
     </div>
   </section>
 
   {{!-- карта --}}
-  <section>
+  <section id="bringBook">
     <div class="container-fluid map">
       <div class="row">
         <div class="col-xl-12">
@@ -159,15 +163,17 @@
     </div>
   </section>
   {{!-- форма с добавлением книги --}}
-  <section class="addbook">
+  <section class="addbook" id="addBookSection">
     <div class="container">
       <div class="addbook-header">
         <p class="addbook-header-title">Добавить свою книгу</p>
-        <hr />
         <p class="addbook-header-description">
-          Для современного мира социально-экономическое развитие обеспечивает
-          актуальность укрепления демократической системы.
+          За три шага вы сможете всем сообщить о книге, которая у вас есть, а
+          другие читатели найдут ее на нашей карте и смогут связаться с вами для
+          встречи.
         </p>
+        <hr />
+
       </div>
       <div class="row">
         <div class="col-4">
@@ -185,7 +191,7 @@
               role="tab"
               aria-controls="v-pills-home"
               aria-selected="true"
-              >О книге</a
+              >1: О книге</a
             >
             <a
               class="nav-link"
@@ -195,114 +201,180 @@
               role="tab"
               aria-controls="v-pills-profile"
               aria-selected="false"
-              >Где забрать</a
+              >2: Где забрать</a
             >
-            <a class="addbook-bringbook" href="#dc"
+            <a
+              class="nav-link"
+              id="v-pills-profile-tab"
+              data-toggle="pill"
+              href="#v-pills-phone"
+              role="tab"
+              aria-controls="v-pills-profile"
+              aria-selected="false"
+              >3: Как с вами связаться</a
+            >
+            <a class="addbook-bringbook" href="#bringBook"
               >Куда я могу отнести книгу?</a
             >
+            <p class="addbook-bringbook-text">Если вы не хотите добавлять книгу на сайт, выберете одно из мест в городе, где можно оставить книгу.</p>
           </div>
         </div>
-        <div class="col-4 addbook-steps">
+        <div class="col-6 addbook-steps">
           <div class="tab-content" id="v-pills-tabContent">
+            {{!-- О книге --}}
             <div
-              class="tab-pane fade show active"
+              class="tab-pane fade show active "
               id="v-pills-home"
               role="tabpanel"
               aria-labelledby="v-pills-home-tab"
             >
-              <p class="addbook-steps-number">Шаг 1 из 2</p>
+              <p class="addbook-steps-number">Шаг 1 из 3</p>
               <p class="addbook-steps-instruction">
                 Расскажите о книге, которой вы хотите поделиться
               </p>
 
               <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Автор</label>
+                  <label for="exampleInputEmail1">Книга</label>
                   <input
                     type="text"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Название книги"
-                    required w
+                    required
+                    
                   />
+                  
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
+                  <label for="exampleInputEmail1">Автор</label>
                   <input
-                    type="password"
+                    type="text"
                     class="form-control"
                     id="exampleInputPassword1"
-                    placeholder="Автор"
+                    placeholder="Автор книги"
                     required
                   />
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                  <label for="exampleInputPassword1">Добавьте не более 3 жанров, описывающих книгу</label>
+                  <label for="exampleInputPassword1"
+                    >Добавьте не более 3 жанров, описывающих книгу</label
+                  >
                   <input
                     type="text"
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="Фантастика..."
+                    required
                   />
                 </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Check me out</label
-                  >
-                </div>
+
                 <button type="submit" class="btn btn-primary">
-                  Подтвердить
+                  Все Верно!
                 </button>
               </form>
             </div>
+            {{!-- Где забрать --}}
             <div
-              class="tab-pane fade"
+              class="tab-pane fade "
               id="v-pills-profile"
               role="tabpanel"
               aria-labelledby="v-pills-profile-tab"
             >
-              <p class="addbook-steps-number">Шаг 2 из 2</p>
+              <p class="addbook-steps-number">Шаг 2 из 3</p>
               <p class="addbook-steps-instruction">
-                Укажите краткую информацию о себе и о месте, где вы можете
-                отдать книгу
+                Укажите краткую информацию о том, где вы живете
+              </p>
+              <p class="addbook-steps-instruction-sub">
+                Внимание! Мы не просим указать ваш точный адрес. Достаточно
+                указать город и улицу. Это поможет читателям понять, где
+                конкретно находится книга на карте.
               </p>
               <form>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputPassword1">Город</label>
                   <input
                     type="text"
-                    class="register-input"
-                    placeholder="Enter email"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Укажите город"
+                    value="Санкт-Петербург"
+                    required
                   />
-                  <span> <img src="/mail.svg" alt="register-img" /></span>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label for="exampleInputPassword1">Улица</label>
                   <input
-                    type="password"
-                    class="register-input"
+                    type="text"
+                    class="form-control"
                     id="exampleInputPassword1"
-                    placeholder="Password"
+                    placeholder="Укажите улицу"
+                    required
                   />
                 </div>
-                <div class="form-check">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Дом</label>
                   <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
+                    type="text"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Укажите дом"
                   />
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Check me out</label
-                  >
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">
+                  Все верно!
+                </button>
+              </form>
+            </div>
+            {{!-- Как с вами связаться --}}
+            <div
+              class="tab-pane fade "
+              id="v-pills-phone"
+              role="tabpanel"
+              aria-labelledby="v-pills-profile-tab"
+            >
+              <p class="addbook-steps-number">Шаг 3 из 3</p>
+              <p class="addbook-steps-instruction">
+                Укажите краткую информацию о себе, чтобы с вами было легко
+                связаться
+              </p>
+
+              <form >
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Ваше имя</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Введите имя"
+                    required
+                  />
+                </div>
+                <p class="addbook-steps-instruction-sub">
+                  Мы не заставляем указывать все ваши контактные данные.
+                  Выберите сами, как читатель сможет с вами связаться.
+                </p>
+                <div class="form-group" id="beforeSocial"> 
+                  <label for="exampleInputPassword1">Указать телефон</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="+7"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-success addbook-addSocialWebBtn"
+                >
+                  <img src="./add.svg" width="15px"  />Указать
+                  социальную сеть
+                </button>
+                 <button type="text" class="btn btn-primary">
+                  Разместить книгу
+                </button>
+                
               </form>
             </div>
           </div>
