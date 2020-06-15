@@ -19,7 +19,7 @@ let addSocialBtn = document.querySelector(".addbook-addSocialWebBtn");
 let phoneInput = document.getElementById("beforeSocial");
 addSocialBtn.addEventListener("click", addSocialLink);
 let maxLink = 0;
-let socialLinkArr = [
+let socialLinkExample = [
   "https://vk.com/irlanndec",
   "https://www.instagram.com/punkybrain/",
   "https://vk.com/id527353857",
@@ -40,7 +40,7 @@ function addSocialLink() {
       type="text"
       class="form-control"
       id="exampleInputPassword1"
-      placeholder=" Пример: ${socialLinkArr[countSpan]}"
+      placeholder=" Пример: ${socialLinkExample[countSpan]}"
       style="font-size: 1.5rem"
       required
     />
