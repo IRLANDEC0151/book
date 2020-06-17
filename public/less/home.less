@@ -5,15 +5,7 @@ header {
   background-repeat: no-repeat;
   background-color: #cccccc;
 }
-nav {
-  .navbar-brand {
-    font-size: 3rem;
-  }
-  a {
-    font-size: 1.7rem;
-    margin: 0 1rem;
-  }
-}
+
 .search {
   text-align: center;
   &-header {
@@ -44,13 +36,12 @@ nav {
 
         .form-group {
           width: 60%;
-         
+
           input {
             width: 100%;
             font-size: 2rem;
             padding: 2.5rem;
           }
-         
         }
         button {
           margin-left: 1rem;
@@ -121,21 +112,12 @@ nav {
     margin: 1.5rem 0;
     position: relative;
     label {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: rgb(78, 78, 80);
     }
     input {
-      font-size: 2rem;
+      font-size: 1.6rem;
       border-radius: 2rem;
-    }
-    span{
-      display: flex;
-      align-items: center;
-      position: absolute;
-      height: 100%;
-      cursor: pointer;
-      bottom: -1.1rem;
-      right: 15rem;
     }
   }
   .form-control {
@@ -164,10 +146,6 @@ nav {
     img {
       margin-right: 1rem;
     }
-    button {
-      margin-top: 2.5rem;
-      font-size: 2rem;
-    }
   }
 
   &-bringbook {
@@ -193,11 +171,70 @@ nav {
       text-decoration: none;
     }
   }
-  &-addSocialWebBtn {
-    display: block;
+  &-nextBtn {
+    margin-top: 5rem;
+    font-size: 2.4rem;
+  }
+  &-addOptionsBtn {
+    border-radius: 2rem;
+    padding: 0.9rem;
+    font-size: 1.5rem;
+  }
+  .removeSocialLink {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    bottom: -1.1rem;
+    right: 15rem;
+  }
+  .removeDescription {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    bottom: -1.1rem;
+    right: -7rem;
+  }
+  &-register {
+    background-color: white;
+    padding: 2rem 0;
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    &-head {
+      margin-top: 2rem;
+      font-size: 4rem;
+      text-align: center;
+    }
+    input {
+      margin: 0 auto;
+    }
+    button {
+      margin: 1rem 0 2rem 0;
+      font-size: 2rem;
+      width: 60%;
+      border-radius: 2rem;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  }
+  &-errorInput {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: red;
+    background-color: rgb(250, 133, 133);
+    text-align: center;
+    padding: 0.7rem 0rem;
+    border-radius: 1rem;
   }
 }
-
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }

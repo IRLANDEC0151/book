@@ -5,13 +5,6 @@ header {
   background-repeat: no-repeat;
   background-color: #cccccc;
 }
-nav .navbar-brand {
-  font-size: 3rem;
-}
-nav a {
-  font-size: 1.7rem;
-  margin: 0 1rem;
-}
 .search {
   text-align: center;
 }
@@ -113,21 +106,12 @@ nav a {
   position: relative;
 }
 .addbook .form-group label {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #4e4e50;
 }
 .addbook .form-group input {
-  font-size: 2rem;
+  font-size: 1.6rem;
   border-radius: 2rem;
-}
-.addbook .form-group span {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  height: 100%;
-  cursor: pointer;
-  bottom: -1.1rem;
-  right: 15rem;
 }
 .addbook .form-control {
   padding: 2.3rem;
@@ -153,10 +137,6 @@ nav a {
 .addbook-steps img {
   margin-right: 1rem;
 }
-.addbook-steps button {
-  margin-top: 2.5rem;
-  font-size: 2rem;
-}
 .addbook-bringbook {
   width: 87%;
   text-align: center;
@@ -180,8 +160,68 @@ nav a {
   background-color: #f7872c;
   text-decoration: none;
 }
-.addbook-addSocialWebBtn {
-  display: block;
+.addbook-nextBtn {
+  margin-top: 5rem;
+  font-size: 2.4rem;
+}
+.addbook-addOptionsBtn {
+  border-radius: 2rem;
+  padding: 0.9rem;
+  font-size: 1.5rem;
+}
+.addbook .removeSocialLink {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+  bottom: -1.1rem;
+  right: 15rem;
+}
+.addbook .removeDescription {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+  bottom: -1.1rem;
+  right: -7rem;
+}
+.addbook-register {
+  background-color: white;
+  padding: 2rem 0;
+  margin: 0 auto;
+  width: 60%;
+  border-radius: 10px;
+  text-align: center;
+}
+.addbook-register-head {
+  margin-top: 2rem;
+  font-size: 4rem;
+  text-align: center;
+}
+.addbook-register input {
+  margin: 0 auto;
+}
+.addbook-register button {
+  margin: 1rem 0 2rem 0;
+  font-size: 2rem;
+  width: 60%;
+  border-radius: 2rem;
+}
+.addbook-register a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.addbook-errorInput {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: red;
+  background-color: #fa8585;
+  text-align: center;
+  padding: 0.7rem 0rem;
+  border-radius: 1rem;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

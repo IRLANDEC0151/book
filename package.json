@@ -14,9 +14,17 @@
   "author": "Sergey Katkov <katkov.syy@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^2.3.3",
+    "csrf": "^3.1.0",
+    "csurf": "^1.11.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.5.0",
     "jquery": "^3.5.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.18",
     "nodemon": "^2.0.4"
   }
 }
