@@ -242,7 +242,7 @@ function register() {
       console.log(e);
     });
 }
-// отправка книги матча на сервер
+// отправка книги  на сервер
 async function sendBook(book) {
   var token = document
     .querySelector('input[name="_csrf"]')
@@ -256,6 +256,29 @@ async function sendBook(book) {
     },
   })
     .then((res) => {
+      return res.json();
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+}
+// отправка user  на сервер
+async function sendRegister(user) {
+  var token = document
+    .querySelector('input[name="_csrf"]')
+    .getAttribute("value");
+  return fetch("/", {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+      "CSRF-Token": token,
+    },
+  })
+    .then((res) => {
+      if (res.redirected) {
+        return true;
+      }
       return res.json();
     })
     .catch((e) => {
