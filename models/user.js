@@ -8,16 +8,19 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  name: String,
-  address: {
-    city: String,
-    street: String,
-    house: String,
-  },
-  books: { 
+  phone: String,
+  userName: String,
+  userLink: [],
+  placeId: {
     type: Schema.Types.ObjectId,
-    ref: "Statistics",
+    ref: "Place",
   },
+  books: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 module.exports = model("User", userSchema);

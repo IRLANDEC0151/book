@@ -19,15 +19,9 @@ exports.registerValidators = [
     .normalizeEmail(),
   body("password", "Слишком короткий пароль").isLength({ min: 8 }).trim(),
   body("confirm").custom((value, { req }) => {
-    console.log(req.body.password);
-    console.log(value);
-
     if (value !== req.body.password) {
       throw new Error("Пароли должны совпадать");
     }
     return true;
   }),
 ];
-exports.bookValidators = [
-  body('genre').isAlpha(['ru-RU']).withMessage('Жанр должен содержать только буквы')
-]; 

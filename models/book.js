@@ -5,7 +5,7 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
-  
+
   author: {
     type: String,
     required: true,
@@ -14,14 +14,10 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
-  address: {
-    type: String,
-    required: true,
-  },
   description: String,
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "user",
+    ref: "User",
   },
 });
 

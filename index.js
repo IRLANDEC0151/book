@@ -60,7 +60,7 @@ app.use(csrf());
 app.use(varMiddleWare);
 app.use(userMiddleWare);
 app.use("/", homeRoutes);
-app.use("/profile", completeRoutes);  
+app.use("/complete", completeRoutes);  
 
 async function start() {
   try {
