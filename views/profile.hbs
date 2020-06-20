@@ -1,1 +1,73 @@
-<h1>profile</h1>
+<main>
+  <section class="profile">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-3 profile-nav">
+          <div
+            class="nav flex-column nav-pills"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a class="nav-link active" data-toggle="pill"
+              ><img src="./homeBlack.svg" alt="" />Профиль</a
+            >
+            <a class="nav-link" data-toggle="pill"
+              ><img src="./addBlack.svg" alt="" />Добавить книгу</a
+            >
+            <a class="nav-link" data-toggle="pill"
+              ><img src="./favorite.svg" alt="" />Избранное</a
+            >
+            <a class="nav-link" data-toggle="pill"
+              ><img src="./settingBlack.svg" alt="" />Настройки</a
+            >
+          </div>
+        </div>
+        <div class="col-xl-9 profile-content">
+          <div class="profile-hello">
+            <p>Привет, <strong>{{user.userName}}</strong></p>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="profile-header">
+                  <p>Мои добавленные книги</p>
+                </div>
+                {{!-- карточки с книгами --}}
+                <div class="row row-cols-1 row-cols-md-2">
+                  {{#each book}}
+                <div class="card mb-5">
+                  <div class="row no-gutters">
+                    <div class="col-xl-4 book-img">
+                      <img
+                        src="https://cv7.litres.ru/pub/c/elektronnaya-kniga/cover_415/48686275-tatyana-ustinova-serga-artemidy.jpg"
+                        class="card-img"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-xl-5">
+                      <div class="card-body"> 
+                          <p class="card-title">{{bookName}}</p>
+                          <p class="card-text">{{author}}</p>
+                          <p class="card-text">{{genre}}</p>
+                          <div class="card-give">
+                            <img src="./giveBook.svg"  alt="">
+                          </div>
+                          <div class="card-actions">
+                            <a href=""><img src="./settingBook.svg" alt=""></a>
+                            <a href=""><img src="./deleteBook.svg" alt=""></a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</main>

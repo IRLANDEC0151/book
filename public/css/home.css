@@ -161,6 +161,9 @@ header {
   font-size: 1.5rem;
   color: #b12121;
 }
+.addbook-instruction-reg {
+  font-size: 2rem;
+}
 .addbook-bringbook {
   width: 87%;
   text-align: center;
@@ -248,7 +251,7 @@ header {
   margin: 0 auto;
   font-size: 2rem;
   color: red;
-  background-color: #fa8585;
+  background-color: #f58484;
   text-align: center;
   padding: 0.7rem 0rem;
   border-radius: 1rem;

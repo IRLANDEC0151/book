@@ -61,8 +61,8 @@ function addSocialLink(event) {
       data-type='userLink'
 
       required
-    /> 
-    <span class="removeSocialLink"> <img src="/quit.svg" width="30px" alt="register-img" /></span> 
+    />  
+    <span class="removeSocialLink"> <img src="/delete.svg" width="30px" alt="register-img" /></span> 
   </div>`
   );
   document.getElementById(`socialLinkInput${maxLink}`).onclick = function (
@@ -107,7 +107,7 @@ function addDescription() {
 
                     required
                   ></textarea>
-                  <span class="removeDescription"> <img  src="/quit.svg" width="30px" alt="register-img" /></span>
+                  <span class="removeDescription"> <img  src="/delete.svg" width="30px" alt="register-img" /></span>
                 </div>`
   );
   document.getElementById("descriptionOfBook").onclick = function (event) {
