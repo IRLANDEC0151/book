@@ -54,10 +54,13 @@ header {
   }
 
   &-add {
-    background-color: #daf8fc;
+    background-color: #568381;
     text-align: center;
     padding: 4rem;
+    position: relative;
+    z-index: 1;
     button {
+      background-color: #249993;
       border: none;
       font-size: 2.7rem;
       margin: 3rem 0;
@@ -65,6 +68,7 @@ header {
       padding-right: 2rem;
     }
     p {
+      color: white;
       margin: 0 auto;
       width: 60%;
       font-size: 2.4rem;
@@ -73,11 +77,24 @@ header {
       text-decoration: none;
       color: white;
     }
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-repeat: repeat;
+      opacity: 0.2;
+      background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
+    }
   }
 }
 
 .map {
-  background-color: white;
+  background: url(https://www.oracle.com/asset/web/i/rw-graphic01-10p.png) 0 0
+    repeat #f5f4f2 !important;
   &-header {
     margin: 4rem 0;
     text-align: center;
@@ -91,8 +108,21 @@ header {
   }
 }
 .addbook {
-  background-color: rgb(219, 235, 133);
-  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+  &::before {
+    background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: repeat;
+    opacity: 0.5;
+  }
+  background-color: rgb(218, 235, 122);
+  padding: 3rem 0;
   margin-bottom: 20rem;
   &-header {
     text-align: center;
@@ -100,24 +130,25 @@ header {
       font-size: 4.3rem;
     }
     &-description {
-      margin-top: 4rem;
-      font-size: 2.5rem;
+      margin-top: 2rem;
+      font-size: 2.3rem;
     }
     hr {
-      margin: 8rem auto;
+      margin: 4rem auto;
       width: 90%;
+      border: 1px solid rgb(65, 62, 62);
     }
   }
   .form-group {
     margin: 1.5rem 0;
     position: relative;
     label {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: rgb(78, 78, 80);
     }
     input {
-      font-size: 1.6rem;
-      border-radius: 2rem;
+      font-size: 1.4rem;
+      border-radius: 1.5rem;
     }
   }
   .form-control {
@@ -131,20 +162,12 @@ header {
   .nav-pills {
     width: fit-content;
   }
-  &-steps {
-    &-number {
-      font-size: 4rem;
-    }
-    &-instruction {
-      font-size: 2rem;
-      &-sub {
-        font-size: 1.5rem;
-        color: rgb(209, 108, 108);
-      }
-    }
 
-    img {
-      margin-right: 1rem;
+  &-instruction {
+    font-size: 2.8rem;
+    &-sub {
+      font-size: 1.5rem;
+      color: rgb(177, 33, 33);
     }
   }
 
@@ -172,13 +195,20 @@ header {
     }
   }
   &-nextBtn {
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-size: 2.4rem;
+    padding: .5rem 1.5rem;
   }
   &-addOptionsBtn {
     border-radius: 2rem;
-    padding: 0.9rem;
+    padding: .7rem 1.4rem;
     font-size: 1.5rem;
+    img{
+      margin:0 1rem 0 .2rem;
+      position: relative;
+      top: -1.5px;
+      
+    }
   }
   .removeSocialLink {
     display: flex;
@@ -187,7 +217,7 @@ header {
     height: 100%;
     cursor: pointer;
     bottom: -1.1rem;
-    right: 15rem;
+    right: 17rem;
   }
   .removeDescription {
     display: flex;
@@ -196,7 +226,7 @@ header {
     height: 100%;
     cursor: pointer;
     bottom: -1.1rem;
-    right: -7rem;
+    right: -5rem;
   }
   &-register {
     background-color: white;
@@ -210,14 +240,16 @@ header {
       font-size: 4rem;
       text-align: center;
     }
+    &-btn {
+      button {
+        margin: 1rem 0 2rem 0;
+        font-size: 2rem;
+        width: 60%;
+        border-radius: 2rem;
+      }
+    }
     input {
       margin: 0 auto;
-    }
-    button {
-      margin: 1rem 0 2rem 0;
-      font-size: 2rem;
-      width: 60%;
-      border-radius: 2rem;
     }
     a {
       text-decoration: none;

@@ -26,9 +26,16 @@
         <a class="nav-item nav-link" href="#">Места</a>
         <a class="nav-item nav-link" href="#">О проекте</a>
       </div>
+      {{#if isAuth}}
+      <div class="navbar-nav navbar-collapse justify-content-end">
+        <a class="nav-item nav-link" href="/profile">Профиль</a>
+      </div>
+      {{else}}
       <div class="navbar-nav navbar-collapse justify-content-end">
         <a class="nav-item nav-link" href="#">Регистрация</a>
-        <a class="nav-item nav-link" href="#">Войти</a>
+        <a class="nav-item nav-link" href="/auth/login">Войти</a>
       </div>
+      {{/if}}
+
     </div>
   </nav>

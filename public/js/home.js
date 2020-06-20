@@ -50,11 +50,11 @@ function addSocialLink(event) {
     "beforeend",
     `
     <div class="form-group" id="socialLinkInput${maxLink}"> 
-    <label for="exampleInputPassword1">Укажите ссылку куда вам могут написать</label>
+    <label for="exampleInputPassword1">Укажите ссылку, куда вам могут написать</label>
     <input
       type="text"
       name="userLink${maxLink}"
-      class="form-control required"
+      class="form-control required data-contact"
       id="exampleInputPassword1"
       placeholder=" пример: ${socialLinkExample[countSpan]}"
       style="font-size: 1.5rem"
@@ -138,11 +138,12 @@ stepTwoBtn.addEventListener("click", function () {
   stepTwoBtn.classList.remove("active");
 });
 stepThreeBtn.addEventListener("click", async function () {
+  isUserContactNull()
   isInputNull();
   if (isNull) {
     isNull = false;
     document.getElementById("errorBook").classList.add("addbook-errorInput");
-    document.getElementById("errorBook").textContent = nullInput;
+    document.getElementById("errorBook").textContent = errorInput;
     stepThreeBtn.removeAttribute("data-toggle");
     return 0;
   }
@@ -151,50 +152,64 @@ stepThreeBtn.addEventListener("click", async function () {
   document.getElementById("v-pills-phone-tab").classList.remove("active");
   document.getElementById("v-pills-reg-tab").classList.add("active");
   stepThreeBtn.classList.remove("active");
-  createBook();
 });
 
 //проверка input
 let isNull = false;
-let nullInput = "";
+let errorInput = "";
 let inputValidator = {};
 let book = {};
 function isInputNull() {
   $("input.required").each(function (i, el) {
-    if (
-      $("textarea.required").val() !== undefined &&
-      $("textarea.required").val() !== ""
-    ) {
-      inputValidator[$("textarea.required").attr("name")] = $(
-        "textarea.required"
-      ).val();
-    } else if ($("textarea.required").val() == "") {
-      isNull = true;
-      nullInput = $("textarea.required").attr("placeholder");
-    }
     let ell = $(el).attr("name");
     let val = $(el).val();
-
+    if ($("textarea.required").val() !== undefined) {
+      if ($("textarea.required").val() !== "") {
+        inputValidator[$("textarea.required").attr("name")] = $(
+          "textarea.required"
+        ).val();
+      } else {
+        isNull = true;
+        errorInput = $("textarea.required").attr("placeholder");
+      }
+    }
     if (val == "") {
-      nullInput = $(el).attr("placeholder");
+      errorInput = $(el).attr("placeholder");
       isNull = true;
+      return false;
     }
     inputValidator[ell] = val;
   });
 }
-
+function isUserContactNull(){
+  let userContact=[]
+  $("input.data-contact").each(function (i, el) {
+    let ell = $(el).attr("name");
+    let val = $(el).val();
+    if (val !== "") {
+      userContact.push(val);
+    }
+  });
+  console.log(userContact);
+  if(!userContact.length){
+    errorInput = "Вы не указали ни одного контакта";
+      isNull = true; 
+  }
+}
 function findDataTypeUser(user) {
   user.userLink = [];
   let address = {};
   $("input").each(function (i, el) {
-    if ($(el).attr("data-type") == "user") {
-      user[$(el).attr("name")] = $(el).val();
-    }
-    if ($(el).attr("data-type") == "place") {
-      address[$(el).attr("name")] = $(el).val();
-    }
-    if ($(el).attr("data-type") == "userLink") {
-      user.userLink.push($(el).val());
+    switch ($(el).attr("data-type")) {
+      case "user":
+        user[$(el).attr("name")] = $(el).val();
+        break;
+      case "place":
+        address[$(el).attr("name")] = $(el).val();
+        break;
+      case "userLink":
+        user.userLink.push($(el).val()); 
+        break;
     }
   });
   user.place = address;
@@ -224,8 +239,8 @@ function register() {
         document.getElementById("errorRegister").textContent = data.error;
         return false;
       }
-      sendBook(inputValidator);
       document.location.href = "http://localhost:8080/complete";
+      sendBook(inputValidator);
     })
     .catch((e) => {
       console.log(e);
@@ -239,7 +254,7 @@ async function sendRegister(user) {
     .getAttribute("value");
   return fetch("/", {
     method: "POST",
-    body: JSON.stringify(user), 
+    body: JSON.stringify(user),
     headers: {
       "Content-Type": "application/json;charset=utf-8",
       "CSRF-Token": token,
@@ -280,5 +295,3 @@ async function sendBook(book) {
       console.log(e);
     });
 }
-//создаем книгу
-function createBook(book) {}

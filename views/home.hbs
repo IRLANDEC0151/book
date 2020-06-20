@@ -15,7 +15,7 @@
               <a
                 class="nav-link active"
                 id="pills-home-tab"
-                data-toggle="pill"
+                data-toggle="pill" 
                 href="#pills-home"
                 role="tab"
                 aria-controls="pills-home"
@@ -155,7 +155,7 @@
               role="tab"
               aria-controls="v-pills-home"
               aria-selected="true"
-              >1: О книге</a
+              ><strong>1.</strong>  О книге</a
             >
             <a
               class="nav-link"
@@ -165,7 +165,7 @@
               role="tab"
               aria-controls="v-pills-profile"
               aria-selected="false"
-              >2: Где забрать</a
+              ><strong>2.</strong>  Где забрать</a
             >
             <a
               class="nav-link"
@@ -175,7 +175,7 @@
               role="tab"
               aria-controls="v-pills-phone"
               aria-selected="false"
-              >3: Как с вами связаться</a
+              ><strong>3.</strong> Как с вами связаться</a
             >  
             <a
               class="nav-link"
@@ -194,6 +194,13 @@
             <p class="addbook-bringbook-text">
               Если вы не хотите добавлять книгу на сайт, выберете одно из мест в
               городе, где можно её оставить.
+            </p> 
+
+             <a class="addbook-bringbook" href="#"
+              >Хочу выложить целое место с книгами</a
+            >
+            <p class="addbook-bringbook-text">
+              Если вы владелец публичного места, где находятся книги.
             </p>
           </div>
         </div>
@@ -205,14 +212,12 @@
               id="v-pills-home"
               role="tabpanel"
               aria-labelledby="v-pills-home-tab"
-              style="width:80%"
+              style="width:100%"
             >
-              <p class="addbook-steps-number"  >Шаг 1 из 3</p>
-              <a href="#register"></a>
-
-              <p class="addbook-steps-instruction">
-                Расскажите о книге, которой вы хотите поделиться
+              <p class="addbook-instruction">
+                Расскажите о книге, которой вы хотите поделиться.
               </p>
+              <div style="width:80%">
 
               <form id="firstForm" onsubmit="return false;">
                 <div class="form-group" id="beforeDescription">
@@ -225,13 +230,11 @@
                     aria-describedby="emailHelp"
                     placeholder="Укажите название книги"
                     data-type='book'
-                    required
                   />
                 </div>
                 <button  class="btn btn-success addbook-addOptionsBtn" id="addDescriptionBtn">
                   <img src="./add.svg" width="15px" />Комментарий
                 </button>
-                
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Автор</label>
@@ -242,8 +245,6 @@
                     class="form-control required"
                     placeholder="Укажите автора книги"
                     data-type='book'
-
-                    required
                   />
                 </div>
                 <div class="form-group">
@@ -257,12 +258,10 @@
                     class="form-control required"
                     placeholder="Укажите жанр"
                     data-type='book'
-
-                    required
                   />
                 </div>
-
-                <button type="submit" class="btn btn-primary addbook-nextBtn" id="stepOne"
+              </form>
+                <button class="btn btn-primary addbook-nextBtn" id="stepOne"
               data-toggle="pill"
               href="#v-pills-profile"
               role="tab"
@@ -270,7 +269,9 @@
               aria-selected="true">
                  Далее
                 </button>
-              </form>
+             
+              </div>
+
             </div>
             {{!-- Где забрать --}}
             <div
@@ -278,16 +279,17 @@
               id="v-pills-profile"
               role="tabpanel"
               aria-labelledby="v-pills-profile-tab"
-               style="width:80%"
+               style="width:100%"
             >
-              <p class="addbook-steps-number">Шаг 2 из 3</p>
-              <p class="addbook-steps-instruction">
-                Укажите краткую информацию о том, где вы живете
+              <p class="addbook-instruction">
+                Укажите краткую информацию о том, где вы живете.
               </p>
-              <p class="addbook-steps-instruction-sub">
+            <div style="width:80%">
+
+              <p class="addbook-instruction-sub">
                 Внимание! Мы не просим указать ваш точный адрес. Достаточно
                 указать город и улицу. Это поможет читателям понять, где
-                конкретно находится книга на карте.
+                находится книга на карте.
               </p>
               <form>
                 <div class="form-group">
@@ -300,8 +302,6 @@
                     placeholder="Укажите город"
                     value="Санкт-Петербург"
                     data-type='place'
-
-                    required
                   />
                 </div>
                 <div class="form-group">
@@ -313,8 +313,6 @@
                     class="form-control required"
                     placeholder="Укажите улицу"
                     data-type='place'
-
-                    required
                   />
                 </div>
                 <div class="form-group">
@@ -326,7 +324,6 @@
                     class="form-control"
                     placeholder="Укажите дом"
                     data-type='place'
-
                   />
                 </div>
               </form>
@@ -339,19 +336,20 @@
                   Далее
                 </button>
             </div>
+            </div>
             {{!-- Как с вами связаться --}}
             <div
               class="tab-pane fade"
               id="v-pills-phone"
               role="tabpanel"
               aria-labelledby="v-pills-profile-tab"
-               style="width:80%"
+               style="width:100%"
             >
-              <p class="addbook-steps-number">Шаг 3 из 3</p>
-              <p class="addbook-steps-instruction">
-                Укажите краткую информацию о себе, чтобы с вами было легко
-                связаться
+              <p class="addbook-instruction">
+                Укажите информацию о себе, чтобы с вами было легко
+                связаться.
               </p>
+            <div style="width:80%">
                 <div>
                    <p id="errorBook" ></p>
                </div>
@@ -366,12 +364,11 @@
                     class="form-control required"
                     placeholder="Введите имя"
                      data-type='user'
-                    required
                   />
                 </div>
-                <p class="addbook-steps-instruction-sub">
+                <p class="addbook-instruction-sub">
                   Мы не заставляем указывать все ваши контактные данные.
-                  Выберите сами, как читатель сможет с вами связаться.
+                  Выберите сами, как читатель сможет с вами связаться!
                 </p>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Указать email</label>
@@ -379,7 +376,7 @@
                     name="email"
                     maxlength="30"
                     type="email"
-                    class="form-control"
+                    class="form-control data-contact"
                     placeholder="Введите email"
                   />
                 </div>
@@ -390,7 +387,7 @@
                     name="phone"
                     maxlength="11"
                     type="phone"
-                    class="form-control"
+                    class="form-control data-contact"
                     placeholder=" пример: 89765432109"
                     data-type='user'
                   />
@@ -405,14 +402,14 @@
                   <img src="./add.svg" width="15px" />Указать социальную сеть
                 </button>
               </form>
-                  <button type="submit" class="btn btn-primary addbook-nextBtn" id="stepThree" 
+                  <button  class="btn btn-primary addbook-nextBtn" id="stepThree" 
                     id="v-pills-phone-tab"
               href="#v-pills-reg"
               role="tab"
               aria-controls="v-pills-reg">
                   Разместить книгу
                 </button>
-
+            </div>
             </div>  
             {{!-- Регистрация --}}
             <div
@@ -472,10 +469,13 @@
                 </div>
                 <input type="hidden" name="_csrf" value="{{csrf}}" />
               </form>
+              <div class="addbook-register-btn">
                 <button type="text" class="btn btn-primary" id="reg"
               > 
                   Регистрация
                 </button>
+
+              </div>
                   <a href="/">Уже есть аккаунт?</a>
               </div>
             </div>

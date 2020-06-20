@@ -15,6 +15,8 @@ const userMiddleWare = require("./middleware/user");
 //подключаем роутеры
 const homeRoutes = require("./routes/home");
 const completeRoutes = require("./routes/complete");
+const authRoutes = require("./routes/auth");
+const profileRoutes = require("./routes/profile");
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -59,8 +61,10 @@ app.use(
 app.use(csrf());
 app.use(varMiddleWare);
 app.use(userMiddleWare);
-app.use("/", homeRoutes);
 app.use("/complete", completeRoutes);  
+app.use("/", homeRoutes);
+app.use("/auth", authRoutes);  
+app.use("/profile", profileRoutes);  
 
 async function start() {
   try {

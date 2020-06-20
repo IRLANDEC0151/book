@@ -49,11 +49,14 @@ header {
   padding: 0 1.5rem;
 }
 .search-add {
-  background-color: #daf8fc;
+  background-color: #568381;
   text-align: center;
   padding: 4rem;
+  position: relative;
+  z-index: 1;
 }
 .search-add button {
+  background-color: #249993;
   border: none;
   font-size: 2.7rem;
   margin: 3rem 0;
@@ -61,6 +64,7 @@ header {
   padding-right: 2rem;
 }
 .search-add p {
+  color: white;
   margin: 0 auto;
   width: 60%;
   font-size: 2.4rem;
@@ -69,8 +73,20 @@ header {
   text-decoration: none;
   color: white;
 }
+.search-add::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  opacity: 0.2;
+  background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
+}
 .map {
-  background-color: white;
+  background: url(https://www.oracle.com/asset/web/i/rw-graphic01-10p.png) 0 0 repeat #f5f4f2 !important;
 }
 .map-header {
   margin: 4rem 0;
@@ -83,9 +99,22 @@ header {
   background-color: #f58787;
 }
 .addbook {
-  background-color: #dbeb85;
-  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+  background-color: #daeb7a;
+  padding: 3rem 0;
   margin-bottom: 20rem;
+}
+.addbook::before {
+  background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  opacity: 0.5;
 }
 .addbook-header {
   text-align: center;
@@ -94,24 +123,25 @@ header {
   font-size: 4.3rem;
 }
 .addbook-header-description {
-  margin-top: 4rem;
-  font-size: 2.5rem;
+  margin-top: 2rem;
+  font-size: 2.3rem;
 }
 .addbook-header hr {
-  margin: 8rem auto;
+  margin: 4rem auto;
   width: 90%;
+  border: 1px solid #413e3e;
 }
 .addbook .form-group {
   margin: 1.5rem 0;
   position: relative;
 }
 .addbook .form-group label {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #4e4e50;
 }
 .addbook .form-group input {
-  font-size: 1.6rem;
-  border-radius: 2rem;
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
 }
 .addbook .form-control {
   padding: 2.3rem;
@@ -124,18 +154,12 @@ header {
 .addbook .nav-pills {
   width: fit-content;
 }
-.addbook-steps-number {
-  font-size: 4rem;
+.addbook-instruction {
+  font-size: 2.8rem;
 }
-.addbook-steps-instruction {
-  font-size: 2rem;
-}
-.addbook-steps-instruction-sub {
+.addbook-instruction-sub {
   font-size: 1.5rem;
-  color: #d16c6c;
-}
-.addbook-steps img {
-  margin-right: 1rem;
+  color: #b12121;
 }
 .addbook-bringbook {
   width: 87%;
@@ -161,13 +185,19 @@ header {
   text-decoration: none;
 }
 .addbook-nextBtn {
-  margin-top: 5rem;
+  margin-top: 3rem;
   font-size: 2.4rem;
+  padding: 0.5rem 1.5rem;
 }
 .addbook-addOptionsBtn {
   border-radius: 2rem;
-  padding: 0.9rem;
+  padding: 0.7rem 1.4rem;
   font-size: 1.5rem;
+}
+.addbook-addOptionsBtn img {
+  margin: 0 1rem 0 0.2rem;
+  position: relative;
+  top: -1.5px;
 }
 .addbook .removeSocialLink {
   display: flex;
@@ -176,7 +206,7 @@ header {
   height: 100%;
   cursor: pointer;
   bottom: -1.1rem;
-  right: 15rem;
+  right: 17rem;
 }
 .addbook .removeDescription {
   display: flex;
@@ -185,7 +215,7 @@ header {
   height: 100%;
   cursor: pointer;
   bottom: -1.1rem;
-  right: -7rem;
+  right: -5rem;
 }
 .addbook-register {
   background-color: white;
@@ -200,14 +230,14 @@ header {
   font-size: 4rem;
   text-align: center;
 }
-.addbook-register input {
-  margin: 0 auto;
-}
-.addbook-register button {
+.addbook-register-btn button {
   margin: 1rem 0 2rem 0;
   font-size: 2rem;
   width: 60%;
   border-radius: 2rem;
+}
+.addbook-register input {
+  margin: 0 auto;
 }
 .addbook-register a {
   text-decoration: none;

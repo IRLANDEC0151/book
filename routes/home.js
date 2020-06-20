@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const jsonParser = require("express").json();
 const router = Router();
-const User = require("../models/user");
-const Book = require("../models/book");
-const Place = require("../models/place");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { registerValidators } = require("../middleware/validators");
+const User = require("../models/user");
+const Book = require("../models/book");
+const Place = require("../models/place");
 router.get("/", (req, res) => {
   res.render("home", {
     title: "Перекресток книг - найди любую книгу в своем городе!",
@@ -36,8 +36,8 @@ router.post("/", jsonParser, registerValidators, async (req, res) => {
     res.redirect("/complete");
   } catch (error) {
     console.log("Пользователь не зарегистрирован");
-    console.log(error);
-  }
+    console.log(error); 
+  } 
 });
 
 router.post("/postBook", jsonParser, async (req, res) => {
