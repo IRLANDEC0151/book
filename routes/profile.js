@@ -17,7 +17,7 @@ function mapCartItems(cart) {
   return cart.map((c) => ({
     bookName: c.bookName,
     author: c.author,
-    genre: c.genre,
+    genre: c.genre, 
   }));
 }
 module.exports = router;
