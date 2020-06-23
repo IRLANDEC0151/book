@@ -45,12 +45,15 @@
             >
               <form class="form-inline">
                 <div class="form-group">
-                  <label for="inputPassword2" class="sr-only">Password</label>
                   <input
                     type="text"
                     class="form-control"
+                    id="bookOrAuthorSearch"
                     placeholder="Автор или произведение"
                   />
+                </div>
+                <div id="bookOrAuthorList">
+                  <ul id="search-ul"></ul>
                 </div>
                 <button type="submit" class="btn btn-primary">
                   Поиск книги

@@ -36,8 +36,8 @@ router.post("/", jsonParser, registerValidators, async (req, res) => {
     res.redirect("/complete");
   } catch (error) {
     console.log("Пользователь не зарегистрирован");
-    console.log(error); 
-  } 
+    console.log(error);
+  }
 });
 
 router.post("/postBook", jsonParser, async (req, res) => {
@@ -67,4 +67,24 @@ async function createPlace(user, address) {
   await user.save();
   console.log("place создан");
 }
+
+router.post("/search", async (req, res) => {
+  var expr = new RegExp("" + req.body.text + "");
+  let books = await Book.find(
+    { bookName: { $regex: expr, $options: "i" } },
+    { score: { $meta: "textScore" } }
+  )
+    .sort({ score: { $meta: "textScore" } })
+    .limit(10);
+  let arr = Array.from(books, (b) => b.bookName).sort((a, b) => {
+    if (a.length > b.length) {
+      return 1;
+    }
+    if (a.length < b.length) {
+      return -1;
+    }
+    return 0;w
+  });
+  res.send({ result: arr });
+});
 module.exports = router;

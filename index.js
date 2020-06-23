@@ -54,7 +54,7 @@ app.use(
     store: store,
   })
 );
-app.use(csrf());
+//app.use(csrf());
 app.use(varMiddleWare);
 app.use(userMiddleWare);
 app.use("/", require("./routes/home"));

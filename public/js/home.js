@@ -13,7 +13,7 @@ $(document).ready(function () {
   });
 });
 
-//все input
+//все bookOrAuthorSearch
 let bookNameInput = document.getElementsByName("bookName");
 let authorInput = document.getElementsByName("author");
 let genreInput = document.getElementsByName("genre");
@@ -51,7 +51,7 @@ function addSocialLink(event) {
     `
     <div class="form-group" id="socialLinkInput${maxLink}"> 
     <label for="exampleInputPassword1">Укажите ссылку, куда вам могут написать</label>
-    <input
+    <bookOrAuthorSearch
       type="text"
       name="userLink${maxLink}"
       class="form-control required data-contact"
@@ -138,7 +138,7 @@ stepTwoBtn.addEventListener("click", function () {
   stepTwoBtn.classList.remove("active");
 });
 stepThreeBtn.addEventListener("click", async function () {
-  isUserContactNull()
+  isUserContactNull();
   isInputNull();
   if (isNull) {
     isNull = false;
@@ -154,13 +154,13 @@ stepThreeBtn.addEventListener("click", async function () {
   stepThreeBtn.classList.remove("active");
 });
 
-//проверка input
+//проверка bookOrAuthorSearch
 let isNull = false;
 let errorInput = "";
 let inputValidator = {};
 let book = {};
 function isInputNull() {
-  $("input.required").each(function (i, el) {
+  $("bookOrAuthorSearch.required").each(function (i, el) {
     let ell = $(el).attr("name");
     let val = $(el).val();
     if ($("textarea.required").val() !== undefined) {
@@ -181,9 +181,9 @@ function isInputNull() {
     inputValidator[ell] = val;
   });
 }
-function isUserContactNull(){
-  let userContact=[]
-  $("input.data-contact").each(function (i, el) {
+function isUserContactNull() {
+  let userContact = [];
+  $("bookOrAuthorSearch.data-contact").each(function (i, el) {
     let ell = $(el).attr("name");
     let val = $(el).val();
     if (val !== "") {
@@ -191,15 +191,15 @@ function isUserContactNull(){
     }
   });
   console.log(userContact);
-  if(!userContact.length){
+  if (!userContact.length) {
     errorInput = "Вы не указали ни одного контакта";
-      isNull = true; 
+    isNull = true;
   }
 }
 function findDataTypeUser(user) {
   user.userLink = [];
   let address = {};
-  $("input").each(function (i, el) {
+  $("bookOrAuthorSearch").each(function (i, el) {
     switch ($(el).attr("data-type")) {
       case "user":
         user[$(el).attr("name")] = $(el).val();
@@ -208,7 +208,7 @@ function findDataTypeUser(user) {
         address[$(el).attr("name")] = $(el).val();
         break;
       case "userLink":
-        user.userLink.push($(el).val()); 
+        user.userLink.push($(el).val());
         break;
     }
   });
@@ -250,7 +250,7 @@ function register() {
 // отправка user  на сервер
 async function sendRegister(user) {
   var token = document
-    .querySelector('input[name="_csrf"]')
+    .querySelector('bookOrAuthorSearch[name="_csrf"]')
     .getAttribute("value");
   return fetch("/", {
     method: "POST",
@@ -274,7 +274,7 @@ async function sendRegister(user) {
 // отправка книги  на сервер
 async function sendBook(book) {
   var token = document
-    .querySelector('input[name="_csrf"]')
+    .querySelector('bookOrAuthorSearch[name="_csrf"]')
     .getAttribute("value");
   await fetch("/postBook", {
     method: "POST",
@@ -295,3 +295,57 @@ async function sendBook(book) {
       console.log(e);
     });
 }
+
+//поиск книги
+let bookOrAuthorList = document.getElementById("bookOrAuthorList");
+let bookOrAuthorSearch = document.getElementById("bookOrAuthorSearch");
+$("html").on("click", function (e) {
+  if (
+    event.target.id != bookOrAuthorSearch.id &&
+    event.target.parentNode.id != "search-ul" &&
+    event.target.parentNode.id != "search-p"
+  ) {
+    bookOrAuthorList.style.display = "none";
+  }
+});
+$(function () {
+  bookOrAuthorSearch.onclick = function () {
+    bookOrAuthorList.style.display = "initial";
+  };
+  bookOrAuthorSearch.oninput = function () {
+    searchCheck();
+  };
+  function searchCheck() {
+    if (bookOrAuthorSearch.value.length >= 2) {
+      bookOrAuthorList.style.display = "initial";
+
+      let data = {};
+      data.text = bookOrAuthorSearch.value.replace(/\s+/g, ' ').trim();
+
+      $.ajax({
+        url: "/search", 
+        type: "POST",
+        dataType: "json",
+        data: data,
+      }).done(function (data) {
+        $("#bookOrAuthorList ul").empty();
+        let articleArray = data.result;
+        if (!articleArray.length) {
+          document
+            .querySelector("#bookOrAuthorList ul")
+            .insertAdjacentHTML(
+              "beforeend",
+              `<p id="search-p">Нет результатов</p>`
+            );
+        }
+        for (let i = 0; i < articleArray.length; i++) {
+          document
+            .querySelector("#bookOrAuthorList ul")
+            .insertAdjacentHTML("beforeend", `<li>${articleArray[i]}</li>`);
+        }
+      });
+    } else {
+      bookOrAuthorList.style.display = "none";
+    }
+  }
+});
