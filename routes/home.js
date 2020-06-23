@@ -83,7 +83,7 @@ router.post("/search", async (req, res) => {
     if (a.length < b.length) {
       return -1;
     }
-    return 0;w
+    return 0;
   });
   res.send({ result: arr });
 });
