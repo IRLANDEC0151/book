@@ -48,6 +48,7 @@ app.use(
 //сессия пользователя
 app.use(
   session({
+    cookie: { maxAge: 9000000000000 },
     secret: "secret",
     resave: false,
     saveUninitialized: false,
@@ -69,10 +70,10 @@ async function start() {
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-      }
+      } 
     );
     console.log("Mongoose запущен");
-
+      
     app.listen(PORT, () => {
       console.log(`Сервер запущен: ${PORT} `);
     });

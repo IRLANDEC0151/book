@@ -51,7 +51,7 @@ function addSocialLink(event) {
     `
     <div class="form-group" id="socialLinkInput${maxLink}"> 
     <label for="exampleInputPassword1">Укажите ссылку, куда вам могут написать</label>
-    <bookOrAuthorSearch
+    <input
       type="text"
       name="userLink${maxLink}"
       class="form-control required data-contact"
@@ -160,7 +160,7 @@ let errorInput = "";
 let inputValidator = {};
 let book = {};
 function isInputNull() {
-  $("bookOrAuthorSearch.required").each(function (i, el) {
+  $("input.required").each(function (i, el) {
     let ell = $(el).attr("name");
     let val = $(el).val();
     if ($("textarea.required").val() !== undefined) {
@@ -183,7 +183,7 @@ function isInputNull() {
 }
 function isUserContactNull() {
   let userContact = [];
-  $("bookOrAuthorSearch.data-contact").each(function (i, el) {
+  $("input.data-contact").each(function (i, el) {
     let ell = $(el).attr("name");
     let val = $(el).val();
     if (val !== "") {
@@ -199,7 +199,7 @@ function isUserContactNull() {
 function findDataTypeUser(user) {
   user.userLink = [];
   let address = {};
-  $("bookOrAuthorSearch").each(function (i, el) {
+  $("input").each(function (i, el) {
     switch ($(el).attr("data-type")) {
       case "user":
         user[$(el).attr("name")] = $(el).val();
@@ -250,7 +250,7 @@ function register() {
 // отправка user  на сервер
 async function sendRegister(user) {
   var token = document
-    .querySelector('bookOrAuthorSearch[name="_csrf"]')
+    .querySelector('input[name="_csrf"]')
     .getAttribute("value");
   return fetch("/", {
     method: "POST",
@@ -274,7 +274,7 @@ async function sendRegister(user) {
 // отправка книги  на сервер
 async function sendBook(book) {
   var token = document
-    .querySelector('bookOrAuthorSearch[name="_csrf"]')
+    .querySelector('input[name="_csrf"]')
     .getAttribute("value");
   await fetch("/postBook", {
     method: "POST",
@@ -320,14 +320,16 @@ $(function () {
       bookOrAuthorList.style.display = "initial";
 
       let data = {};
-      data.text = bookOrAuthorSearch.value.replace(/\s+/g, ' ').trim();
+      data.text = bookOrAuthorSearch.value.replace(/\s+/g, " ").trim();
 
       $.ajax({
-        url: "/search", 
+        url: "/search",
         type: "POST",
         dataType: "json",
         data: data,
       }).done(function (data) {
+        console.log(data); 
+
         $("#bookOrAuthorList ul").empty();
         let articleArray = data.result;
         if (!articleArray.length) {
@@ -335,16 +337,33 @@ $(function () {
             .querySelector("#bookOrAuthorList ul")
             .insertAdjacentHTML(
               "beforeend",
-              `<p id="search-p">Нет результатов</p>`
+              `<p id="search-p" class="noResults">Нет результатов</p>`
             );
         }
         for (let i = 0; i < articleArray.length; i++) {
-          document
-            .querySelector("#bookOrAuthorList ul")
-            .insertAdjacentHTML("beforeend", `<li>${articleArray[i]}</li>`);
+          
+          if(typeof articleArray[i]=="string"){
+            console.log(typeof articleArray[i]);
+            
+            document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
+              "beforeend",
+              `<li> <img src="/authorBlack.svg" alt="">
+                <span class="onlyAuthor">${articleArray[i]}</span>
+                </li>`
+            );
+            continue;
+          }
+          document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
+            "beforeend",
+            `<li>
+              <span class="resultBook">${articleArray[i].bookName}</span>
+              <span class="resultAuthor">${articleArray[i].author}</span>
+              </li>`
+          );
         }
       });
     } else {
+      $("#bookOrAuthorList ul").empty();
       bookOrAuthorList.style.display = "none";
     }
   }

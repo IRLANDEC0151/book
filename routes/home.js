@@ -7,7 +7,8 @@ const { registerValidators } = require("../middleware/validators");
 const User = require("../models/user");
 const Book = require("../models/book");
 const Place = require("../models/place");
-router.get("/", (req, res) => {
+
+router.get("/", async (req, res) => {
   res.render("home", {
     title: "Перекресток книг - найди любую книгу в своем городе!",
     style: "/home.css",
@@ -29,11 +30,12 @@ router.post("/", jsonParser, registerValidators, async (req, res) => {
     await user.save();
     req.session.user = user;
     req.session.isAuthenticated = true;
-    req.session.save();
-    console.log("пользователь зарегистрирован");
-
-    await createPlace(user, req.body.place);
-    res.redirect("/complete");
+    req.session.save(async (err) => {
+      if (err) throw err;
+      console.log("пользователь зарегистрирован");
+      await createPlace(user, req.body.place);
+      res.redirect("/complete");
+    });
   } catch (error) {
     console.log("Пользователь не зарегистрирован");
     console.log(error);
@@ -70,21 +72,57 @@ async function createPlace(user, address) {
 
 router.post("/search", async (req, res) => {
   var expr = new RegExp("" + req.body.text + "");
-  let books = await Book.find(
-    { bookName: { $regex: expr, $options: "i" } },
-    { score: { $meta: "textScore" } }
-  )
-    .sort({ score: { $meta: "textScore" } })
-    .limit(10);
-  let arr = Array.from(books, (b) => b.bookName).sort((a, b) => {
-    if (a.length > b.length) {
-      return 1;
-    }
-    if (a.length < b.length) {
-      return -1;
-    }
-    return 0;
-  });
-  res.send({ result: arr });
+  let books = await Book.find({
+    bookName: { $regex: expr, $options: "i" },
+  }).limit(10);
+
+  let authors = await Book.find({
+    author: { $regex: expr, $options: "i" },
+  }).limit(10);
+
+  let bookData = searchBook(books);
+  let authorData = searchAuthor(authors);
+
+  res.send({ result: concatData(bookData, authorData) });
 });
+
+function searchBook(books) {
+  books = books.filter(
+    (b, index, self) =>
+      self.findIndex(
+        (t) => t.bookName === b.bookName && t.author === b.author
+      ) === index
+  );
+
+  let arr = Array.from(books, (b) => {
+    return { bookName: b.bookName, author: b.author };
+  }).sort((a, b) => {
+    return a.bookName.length - b.bookName.length;
+  });
+  return arr;
+}
+
+function searchAuthor(authors) {
+  let arr = [
+    ...new Set(
+      Array.from(authors, (a) => {
+        return a.author;
+      })
+    ),
+  ].sort((a, b) => {
+    return a.length - b.length;
+  });
+  return arr;
+}
+function concatData(books, authors) {
+  let i = 0;
+  while (books.length !== 10) {
+    books.push(authors[i]);
+    i++;
+  }
+  var filtered = books.filter(function (b) {
+    return b != null;
+  });
+  return filtered;
+}
 module.exports = router;
