@@ -300,10 +300,13 @@ async function sendBook(book) {
 let bookOrAuthorList = document.getElementById("bookOrAuthorList");
 let bookOrAuthorSearch = document.getElementById("bookOrAuthorSearch");
 $("html").on("click", function (e) {
+  console.log(event.target.parentNode.tagName);
+  console.log(event.target.tagName);
+
   if (
     event.target.id != bookOrAuthorSearch.id &&
-    event.target.parentNode.id != "search-ul" &&
-    event.target.parentNode.id != "search-p"
+    event.target.parentNode.tagName != "LI" &&
+    (event.target.parentNode.tagName || event.target.tagName) != "UL"
   ) {
     bookOrAuthorList.style.display = "none";
   }
@@ -328,8 +331,6 @@ $(function () {
         dataType: "json",
         data: data,
       }).done(function (data) {
-        console.log(data); 
-
         $("#bookOrAuthorList ul").empty();
         let articleArray = data.result;
         if (!articleArray.length) {
@@ -341,10 +342,9 @@ $(function () {
             );
         }
         for (let i = 0; i < articleArray.length; i++) {
-          
-          if(typeof articleArray[i]=="string"){
+          if (typeof articleArray[i] == "string") {
             console.log(typeof articleArray[i]);
-            
+
             document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
               "beforeend",
               `<li> <img src="/authorBlack.svg" alt="">

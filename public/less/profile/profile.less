@@ -8,12 +8,19 @@
     border-radius: 2rem;
     width: 60%;
     margin: 4rem auto;
+    transition-duration: 0.3s;
+    height: 5rem;
+    line-height: 4rem;
     img {
       position: relative;
       margin-right: 2rem;
       width: 2.2rem;
       top: -3px;
     }
+    &:hover {
+      color: #fff;
+      background-color: #252527;
+    } 
   }
   &-hello {
     p {
@@ -30,7 +37,7 @@
 
 .card {
   border: none;
-  max-width: 540px;
+  //max-width: 540px;
   .book-img {
     img {
       border-radius: 2rem;
@@ -50,14 +57,16 @@
     color: grey;
   }
   &-give {
-      text-align: center;
-      margin: 3rem 0;
+    width: 70%;
+    text-align: center;
+    margin: 3rem 0;
     img {
       cursor: pointer;
       width: 6rem;
     }
   }
   &-actions {
+    width: 70%;
     display: flex;
     justify-content: space-evenly;
     img {
@@ -66,6 +75,12 @@
     }
   }
 }
+
+.tooltip-inner {
+  font-size: 1.5rem;
+  background-color: rgb(24, 23, 23);
+}
+
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;

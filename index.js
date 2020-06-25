@@ -70,10 +70,9 @@ async function start() {
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-      } 
+      }
     );
     console.log("Mongoose запущен");
-      
     app.listen(PORT, () => {
       console.log(`Сервер запущен: ${PORT} `);
     });

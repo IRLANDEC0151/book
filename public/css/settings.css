@@ -1,0 +1,27 @@
+.settings {
+  margin-top: 6rem;
+}
+.settings .nav-link {
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: black;
+  border-radius: 2rem;
+  width: 60%;
+  margin: 4rem auto;
+  transition-duration: 0.3s;
+}
+.settings .nav-link img {
+  position: relative;
+  margin-right: 2rem;
+  width: 2.2rem;
+  top: -3px;
+}
+.settings .nav-link:hover {
+  background-color: #252527;
+  color: #fff;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #252527;
+}

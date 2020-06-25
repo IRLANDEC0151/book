@@ -8,12 +8,19 @@
   border-radius: 2rem;
   width: 60%;
   margin: 4rem auto;
+  transition-duration: 0.3s;
+  height: 5rem;
+  line-height: 4rem;
 }
 .profile .nav-link img {
   position: relative;
   margin-right: 2rem;
   width: 2.2rem;
   top: -3px;
+}
+.profile .nav-link:hover {
+  color: #fff;
+  background-color: #252527;
 }
 .profile-hello p {
   font-size: 4.5rem;
@@ -26,7 +33,6 @@
 }
 .card {
   border: none;
-  max-width: 540px;
 }
 .card .book-img img {
   border-radius: 2rem;
@@ -45,6 +51,7 @@
   color: grey;
 }
 .card-give {
+  width: 70%;
   text-align: center;
   margin: 3rem 0;
 }
@@ -53,12 +60,17 @@
   width: 6rem;
 }
 .card-actions {
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
 }
 .card-actions img {
   cursor: pointer;
   width: 25px;
+}
+.tooltip-inner {
+  font-size: 1.5rem;
+  background-color: #181717;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {

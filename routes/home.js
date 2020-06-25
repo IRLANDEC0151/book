@@ -7,7 +7,6 @@ const { registerValidators } = require("../middleware/validators");
 const User = require("../models/user");
 const Book = require("../models/book");
 const Place = require("../models/place");
-
 router.get("/", async (req, res) => {
   res.render("home", {
     title: "Перекресток книг - найди любую книгу в своем городе!",
@@ -74,6 +73,7 @@ router.post("/search", async (req, res) => {
   var expr = new RegExp("" + req.body.text + "");
   let books = await Book.find({
     bookName: { $regex: expr, $options: "i" },
+    status: false, 
   }).limit(10);
 
   let authors = await Book.find({
