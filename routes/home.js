@@ -69,7 +69,7 @@ async function createPlace(user, address) {
   console.log("place создан");
 }
 
-router.post("/search", async (req, res) => {
+router.post("/search",jsonParser, async (req, res) => {
   var expr = new RegExp("" + req.body.text + "");
   let books = await Book.find({
     bookName: { $regex: expr, $options: "i" },

@@ -55,7 +55,7 @@ app.use(
     store: store,
   })
 );
-//app.use(csrf());
+app.use(csrf());
 app.use(flash());
 app.use(varMiddleWare);
 app.use(userMiddleWare);

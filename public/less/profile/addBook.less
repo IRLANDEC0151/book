@@ -1,56 +1,13 @@
+@import "./navLink";
+
 .addBook {
-  margin-top: 6rem;
-
-  &-linkContent {
-    width: 100%;
-    display: flex;
-    width: fit-content;
-    margin-left: 4rem;
-  }
-  .nav-link {
-    cursor: pointer;
-    min-width: 25.5rem;
-    font-size: 1.7rem;
-    text-align: left;
-    color: black;
-    border-radius: 2rem;
-    width: fit-content;
-    margin: 4rem auto;
-    transition-duration: 0.3s;
-    height: 5rem;
-    line-height: 4rem;
-    img {
-      position: relative;
-      margin: 0 2rem;
-      width: 2.2rem;
-      top: -3px;
-    }
-    span {
-      color: black;
-      background-color: #dce4e0;
-      border-radius: 50%;
-      float: right;
-      position: relative;
-      top: 1.2rem;
-    }
-    &:hover {
-      color: #fff;
-      background-color: #252527;
-      span {
-        background-color: white;
-      }
-    }
-  }
-
   &-header {
     margin: 4rem auto;
-    text-align: center;
     p {
       font-size: 5rem;
     }
   }
   &-instruction {
-    text-align: center;
     p {
       font-size: 2rem;
     }
@@ -91,38 +48,44 @@
   .book-img {
     margin: auto 0;
     cursor: pointer;
+    transition-duration: 0.3s;
+
     &-addImg {
       position: absolute;
       bottom: 1rem;
-      left: 5rem;
+      left: 7rem;
       opacity: 0;
-      transition-duration: 0.5s;
+      transition-duration: 0.3s;
     }
     p {
-      font-size: 1.4rem;
+      font-size: 2rem;
       color: rgb(23, 54, 88);
     }
     img {
       width: 100%;
       border-radius: 2rem;
+      transition-duration: 0.5s;
+    
     }
     &:hover {
-      .book-img-addImg {
-        opacity: 1;
-        bottom: 5rem;
+        transform: scale(1.1);
+        .book-img-addImg {
+          opacity: 1;
+          transform: scale(1.1);
+        bottom: 6rem;
         position: absolute;
       }
     }
   }
 }
 .form-group {
-  margin: 1.5rem auto;
+  margin: 1.5rem auto; 
   width: 80%;
   label {
     font-size: 1.5rem;
     color: rgb(78, 78, 80);
   }
-  input {
+  input { 
     font-size: 1.4rem;
     border-radius: 1.5rem;
   }
@@ -133,10 +96,4 @@
 .tooltip-inner {
   font-size: 1.5rem;
   background-color: rgb(24, 23, 23);
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #252527;
 }

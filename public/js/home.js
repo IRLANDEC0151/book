@@ -272,10 +272,8 @@ async function sendRegister(user) {
 }
 
 // отправка книги  на сервер
+let token = document.querySelector('input[name="_csrf"]').getAttribute("value");
 async function sendBook(book) {
-  var token = document
-    .querySelector('input[name="_csrf"]')
-    .getAttribute("value");
   await fetch("/postBook", {
     method: "POST",
     body: JSON.stringify(book),
@@ -300,9 +298,6 @@ async function sendBook(book) {
 let bookOrAuthorList = document.getElementById("bookOrAuthorList");
 let bookOrAuthorSearch = document.getElementById("bookOrAuthorSearch");
 $("html").on("click", function (e) {
-  console.log(event.target.parentNode.tagName);
-  console.log(event.target.tagName);
-
   if (
     event.target.id != bookOrAuthorSearch.id &&
     event.target.parentNode.tagName != "LI" &&
@@ -318,53 +313,66 @@ $(function () {
   bookOrAuthorSearch.oninput = function () {
     searchCheck();
   };
-  function searchCheck() {
+  async function searchCheck() {
     if (bookOrAuthorSearch.value.length >= 2) {
       bookOrAuthorList.style.display = "initial";
 
-      let data = {};
-      data.text = bookOrAuthorSearch.value.replace(/\s+/g, " ").trim();
-
-      $.ajax({
-        url: "/search",
-        type: "POST",
-        dataType: "json",
-        data: data,
-      }).done(function (data) {
-        $("#bookOrAuthorList ul").empty();
-        let articleArray = data.result;
-        if (!articleArray.length) {
-          document
-            .querySelector("#bookOrAuthorList ul")
-            .insertAdjacentHTML(
-              "beforeend",
-              `<p id="search-p" class="noResults">Нет результатов</p>`
-            );
-        }
-        for (let i = 0; i < articleArray.length; i++) {
-          if (typeof articleArray[i] == "string") {
-            console.log(typeof articleArray[i]);
-
-            document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
-              "beforeend",
-              `<li> <img src="/authorBlack.svg" alt="">
-                <span class="onlyAuthor">${articleArray[i]}</span>
-                </li>`
-            );
-            continue;
-          }
-          document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
-            "beforeend",
-            `<li>
-              <span class="resultBook">${articleArray[i].bookName}</span>
-              <span class="resultAuthor">${articleArray[i].author}</span>
-              </li>`
-          );
-        }
-      });
+      await fetch("/search", {
+        method: "POST",
+        body: JSON.stringify({
+          text: bookOrAuthorSearch.value.replace(/\s+/g, " ").trim(),
+        }),
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+          "CSRF-Token": token,
+        },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          outputSearch(data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     } else {
       $("#bookOrAuthorList ul").empty();
       bookOrAuthorList.style.display = "none";
     }
   }
 });
+
+//вывод результатов поиска с сервера
+function outputSearch(data) {
+  $("#bookOrAuthorList ul").empty();
+  let articleArray = data.result;
+  if (!articleArray.length) {
+    document
+      .querySelector("#bookOrAuthorList ul")
+      .insertAdjacentHTML(
+        "beforeend",
+        `<p id="search-p" class="noResults">Нет результатов</p>`
+      );
+  }
+  for (let i = 0; i < articleArray.length; i++) {
+    if (typeof articleArray[i] == "string") {
+      console.log(typeof articleArray[i]);
+
+      document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
+        "beforeend",
+        `<li> <img src="/authorBlack.svg" alt="">
+          <span class="onlyAuthor">${articleArray[i]}</span>
+          </li>`
+      );
+      continue;
+    }
+    document.querySelector("#bookOrAuthorList ul").insertAdjacentHTML(
+      "beforeend",
+      `<li>
+        <span class="resultBook">${articleArray[i].bookName}</span>
+        <span class="resultAuthor">${articleArray[i].author}</span>
+        </li>`
+    );
+  }
+}

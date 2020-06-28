@@ -1,20 +1,20 @@
 <main>
-  <section class="addBook">
+  <section class="navigate addBook">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-3 col-lg-4 addBook-nav">
+        <div class="col-xl-3 col-lg-4">
           <div
             class="nav flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
           >
-            <div class="addBook-linkContent">
+            <div class="navigate-linkContent">
               <a class="nav-link" href="/profile"
                 ><img src="/homeBlack.svg" alt="" />Профиль</a
               >
             </div>
-            <div class="addBook-linkContent">
+            <div class="navigate-linkContent">
               <a class="nav-link active" href="/profile/addBook"
                 ><img src="/addBlack.svg" alt="" />Добавить книгу<span
                   class="badge"
@@ -22,14 +22,14 @@
                 ></a
               >
             </div>
-            <div class="addBook-linkContent">
+            <div class="navigate-linkContent">
               <a class="nav-link" href="/profile/favorites"
                 ><img src="/favorite.svg" alt="" />Избранное<span class="badge"
                   >{{user.favorites.length}}</span
                 ></a
               >
             </div>
-            <div class="addBook-linkContent">
+            <div class="navigate-linkContent">
               <a class="nav-link" href="/profile/settings"
                 ><img src="/settingBlack.svg" alt="" />Настройки</a
               >
@@ -49,14 +49,14 @@
 
           <div class="card mb-5">
             <form action="/profile/addBook" method="POST">
-              <div class="row justify-content-center no-gutters">
-                <div class="col-xl-2 col-lg-4 book-img">
+              <div class="row no-gutters">
+                <div class="col-xl-3 col-lg-4 book-img">
                   <div class="book-img-addImg">
-                    <p>Добавить фото</p>
+                    <p>Изменить фото</p>
                   </div>
                   <img src="/bookTemplate.svg" class="card-img" alt="..." />
                 </div>
-                <div class="col-xl-5 col-lg-7">
+                <div class="col-xl-4 col-lg-7">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Название книги</label>
@@ -82,7 +82,6 @@
                         type="text"
                         class="form-control"
                         required
-
                       />
                     </div>
                     <div class="form-group">
@@ -95,6 +94,7 @@
                         required
                       />
                     </div>
+                    <input type="hidden" name="_csrf" value="{{csrf}}" />
                     <div class="addBook-addBook">
                       <button class="btn btn-primary">Разместить книгу</button>
                     </div>

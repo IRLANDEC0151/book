@@ -1,30 +1,30 @@
 <main>
-  <section class="profile">
+  <section class=" navigate profile">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-3 col-lg-4 profile-nav">
+        <div class="col-xl-3 col-lg-4 ">
           <div
             class="nav flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
-          >  <div class="profile-linkContent">
+          >  <div class="navigate-linkContent">
             <a class="nav-link active" 
               ><img src="/homeBlack.svg" alt="" />Профиль</a
             >
             </div>
-            <div class="profile-linkContent">
+            <div class="navigate-linkContent">
 
             <a class="nav-link"  href="/profile/addBook"
-              ><img src="/addBlack.svg" alt="" />Добавить книгу<span class="badge">{{book.length}}</span></a
+              ><img src="/addBlack.svg" alt="" />Добавить книгу<span class="badge">{{user.books.length}}</span></a
             >
             </div>
-             <div class="profile-linkContent">
+             <div class="navigate-linkContent">
             <a class="nav-link"  href="/profile/favorites"
               ><img src="/favorite.svg" alt="" />Избранное<span class="badge">{{user.favorites.length}}</span></a
             >
             </div>
-            <div class="profile-linkContent">
+            <div class="navigate-linkContent">
             <a class="nav-link"  href="/profile/settings"
               ><img src="/settingBlack.svg" alt="" />Настройки</a
             >
@@ -38,13 +38,15 @@
           <div class="container">
             <div class="row">
               <div class="col-xl-12">
+                 {{#if book}}
+
+               
                 <div class="profile-header">
                   <p>Мои добавленные книги</p>
                 </div>
                 {{!-- карточки с книгами --}}
                 <div class="row row-cols-xl-2 row-cols-lg-1">
                   {{#each book}}
-
                   <div class="card mb-5">
                     <div class="row no-gutters">
                       <div class="col-xl-4 col-lg-4 book-img">
@@ -54,7 +56,7 @@
                           alt="..."
                         />
                       </div>
-                      <div class="col-xl-5 col-lg-7">
+                      <div class="col-xl-7 col-lg-7">
                         <div class="card-body">
                           <p class="card-title">{{bookName}}</p>
                           <p class="card-text">{{author}}</p>
@@ -72,8 +74,7 @@
                                 title="Редактировать"
                             /></a>
                             <form action="/profile/deleteBook" method="POST">
-                            <input type="hidden" name="_csrf" value="{{csrf}}">
-                           <input type="hidden" name="_id" value="{{ _id }}">
+                           <input type="hidden" name="_id" value="{{ _id}}">
                             <button type="submit"
                               ><img
                                 src="./deleteBook.svg"
@@ -82,14 +83,20 @@
                                 data-placement="bottom"
                                 title="Удалить книгу"
                             /></button>
+                            <input type="hidden" name="_csrf" value="{{@root.csrf}}" />
                             </form>
                           </div>
                         </div>
                       </div>
-                    </div>
+                  </div>
                   </div>
                   {{/each}}
                 </div>
+                   {{else}}
+                      <div class="profile-header">
+                  <p>Книги еще не добавлены</p>
+                </div>
+                  {{/if}}
               </div>
             </div>
           </div>

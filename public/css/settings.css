@@ -1,24 +1,49 @@
-.settings {
+.navigate {
   margin-top: 6rem;
 }
-.settings .nav-link {
+.navigate-linkContent {
+  width: 100%;
+  display: flex;
+  width: fit-content;
+}
+.navigate .nav-link {
   cursor: pointer;
+  min-width: 25.5rem;
   font-size: 1.7rem;
+  text-align: left;
   color: black;
   border-radius: 2rem;
-  width: 60%;
+  width: fit-content;
   margin: 4rem auto;
   transition-duration: 0.3s;
+  height: 5rem;
+  line-height: 4rem;
 }
-.settings .nav-link img {
+.navigate .nav-link img {
   position: relative;
-  margin-right: 2rem;
+  margin: 0 2rem;
   width: 2.2rem;
   top: -3px;
 }
-.settings .nav-link:hover {
-  background-color: #252527;
+.navigate .nav-link span {
+  color: black;
+  background-color: #dce4e0;
+  border-radius: 50%;
+  float: right;
+  position: relative;
+  top: 1.2rem;
+}
+.navigate .nav-link:hover {
   color: #fff;
+  background-color: #252527;
+}
+.navigate .nav-link:hover span {
+  background-color: white;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #252527;
 }
 .settings .card-header {
   font-size: 2rem;
@@ -95,9 +120,4 @@
   margin: 1rem;
   font-size: 2rem;
   width: 15rem;
-}
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #252527;
 }

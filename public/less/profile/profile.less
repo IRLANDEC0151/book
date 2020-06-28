@@ -1,47 +1,7 @@
-.profile {
-  margin-top: 6rem;
+@import "./navLink"; 
 
-  &-linkContent {
-    width: 100%;
-    display: flex;
-    width: fit-content;
-    margin-left: 4rem;
-  }
-  .nav-link {
-    cursor: pointer;
-    min-width: 25.5rem;
-    font-size: 1.7rem;
-    text-align: left;
-    color: black;
-    border-radius: 2rem;
-    width: fit-content;
-    margin: 4rem auto;
-    transition-duration: 0.3s;
-    height: 5rem;
-    line-height: 4rem;
-    img {
-      position: relative;
-      margin: 0 2rem;
-      width: 2.2rem;
-      top: -3px;
-    }
-    span {
-      color: black;
-      background-color: #dce4e0;
-      border-radius: 50%;
-      float: right;
-      position: relative;
-      top: 1.2rem;
-    }
-    &:hover {
-      color: #fff;
-      background-color: #252527;
-      span {
-        background-color: white;
-      }
-    }
-  }
-  &-hello {
+.profile {
+  &-hello { 
     p {
       font-size: 4.5rem;
     }
@@ -56,9 +16,10 @@
 
 .card {
   border: none;
-  //max-width: 540px;
   .book-img {
     img {
+      height: 100%;
+      width: 100%;
       border-radius: 2rem;
     }
   }
@@ -94,19 +55,14 @@
     }
   }
 }
+  
 
 .tooltip-inner {
   font-size: 1.5rem;
   background-color: rgb(24, 23, 23);
 }
-
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #252527;
-}
-
-button:active, button:focus {
+button:active,
+button:focus {
   background-color: transparent;
   outline: none !important;
 }

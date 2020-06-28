@@ -1,13 +1,12 @@
-.profile {
+.navigate {
   margin-top: 6rem;
 }
-.profile-linkContent {
+.navigate-linkContent {
   width: 100%;
   display: flex;
   width: fit-content;
-  margin-left: 4rem;
 }
-.profile .nav-link {
+.navigate .nav-link {
   cursor: pointer;
   min-width: 25.5rem;
   font-size: 1.7rem;
@@ -20,13 +19,13 @@
   height: 5rem;
   line-height: 4rem;
 }
-.profile .nav-link img {
+.navigate .nav-link img {
   position: relative;
   margin: 0 2rem;
   width: 2.2rem;
   top: -3px;
 }
-.profile .nav-link span {
+.navigate .nav-link span {
   color: black;
   background-color: #dce4e0;
   border-radius: 50%;
@@ -34,12 +33,17 @@
   position: relative;
   top: 1.2rem;
 }
-.profile .nav-link:hover {
+.navigate .nav-link:hover {
   color: #fff;
   background-color: #252527;
 }
-.profile .nav-link:hover span {
+.navigate .nav-link:hover span {
   background-color: white;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #252527;
 }
 .profile-hello p {
   font-size: 4.5rem;
@@ -54,6 +58,8 @@
   border: none;
 }
 .card .book-img img {
+  height: 100%;
+  width: 100%;
   border-radius: 2rem;
 }
 .card-body {
@@ -90,11 +96,6 @@
 .tooltip-inner {
   font-size: 1.5rem;
   background-color: #181717;
-}
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #252527;
 }
 button:active,
 button:focus {
