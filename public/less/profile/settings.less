@@ -17,10 +17,87 @@
     }
     &:hover {
       background-color: #252527;
-  color: #fff;
-    
+      color: #fff;
     }
   }
+
+  .card-header {
+    font-size: 2rem;
+    background-color: #0c508a;
+    color: white;
+  }
+  .card {
+    border: 1px solid rgb(12, 80, 138, 0.125);
+    width: 70%;
+  }
+  &-param {
+    text-align: center;
+    margin-top: 3rem;
+    &-name {
+      display: inline-block;
+      text-align: right;
+      font-size: 1.7rem;
+      margin-right: 4rem;
+      font-weight: bold;
+      width: 22%;
+    }
+
+    &-value {
+      font-size: 1.7rem;
+      width: 40%;
+      display: inline-block;
+    }
+    &-socialLink {
+      position: relative;
+      left: 3.3rem;
+      display: inline-block;
+      font-size: 1.7rem;
+      margin: 0.5rem 0;
+      width: 40%;
+    }
+    &-address{
+      display: inline-block;
+      font-size: 1.7rem;
+      margin: 0.5rem 0;
+      width: 40%;
+    } 
+    &-many {
+      margin-left: 10rem;
+      label {
+        width: 10%;
+        font-size: 1.5rem;
+      }
+    }
+    &-addSocialLink {
+      position: relative;
+      left: 8rem;
+      margin: 1rem auto;
+      border-radius: 2rem;
+      padding: 0.7rem 1.4rem;
+      font-size: 1.2rem;
+      img {
+        margin: 0 1rem 0 0.2rem;
+        position: relative;
+        top: -1.5px;
+      }
+    }
+    &-save {
+      text-align: center;
+      margin-top: 3rem;
+      button {
+        font-size: 2rem;
+        background-color: #1e69ac;
+        &:hover {
+          background-color: #0c508a;
+        }
+      }
+    }
+  }
+}
+.logout{
+  margin: 1rem;
+  font-size: 2rem;
+  width: 15rem;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {

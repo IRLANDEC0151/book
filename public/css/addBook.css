@@ -1,0 +1,136 @@
+.addBook {
+  margin-top: 6rem;
+}
+.addBook-linkContent {
+  width: 100%;
+  display: flex;
+  width: fit-content;
+  margin-left: 4rem;
+}
+.addBook .nav-link {
+  cursor: pointer;
+  min-width: 25.5rem;
+  font-size: 1.7rem;
+  text-align: left;
+  color: black;
+  border-radius: 2rem;
+  width: fit-content;
+  margin: 4rem auto;
+  transition-duration: 0.3s;
+  height: 5rem;
+  line-height: 4rem;
+}
+.addBook .nav-link img {
+  position: relative;
+  margin: 0 2rem;
+  width: 2.2rem;
+  top: -3px;
+}
+.addBook .nav-link span {
+  color: black;
+  background-color: #dce4e0;
+  border-radius: 50%;
+  float: right;
+  position: relative;
+  top: 1.2rem;
+}
+.addBook .nav-link:hover {
+  color: #fff;
+  background-color: #252527;
+}
+.addBook .nav-link:hover span {
+  background-color: white;
+}
+.addBook-header {
+  margin: 4rem auto;
+  text-align: center;
+}
+.addBook-header p {
+  font-size: 5rem;
+}
+.addBook-instruction {
+  text-align: center;
+}
+.addBook-instruction p {
+  font-size: 2rem;
+}
+.addBook-instruction strong {
+  cursor: pointer;
+  color: #5252c7;
+  border-bottom: 2px solid #5252c7;
+  transition-duration: 0.2s;
+}
+.addBook-instruction strong:hover {
+  border-bottom: 2px solid white;
+  color: #070783;
+}
+.addBook-addOptionsBtn {
+  text-align: center;
+}
+.addBook-addOptionsBtn button {
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.5rem;
+}
+.addBook-addOptionsBtn button img {
+  margin: 0 1rem 0 0.2rem;
+  position: relative;
+  top: -1.5px;
+}
+.addBook-addBook {
+  text-align: center;
+}
+.addBook-addBook button {
+  font-size: 2rem;
+}
+.card {
+  border: none;
+}
+.card .book-img {
+  margin: auto 0;
+  cursor: pointer;
+}
+.card .book-img-addImg {
+  position: absolute;
+  bottom: 1rem;
+  left: 5rem;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.card .book-img p {
+  font-size: 1.4rem;
+  color: #173658;
+}
+.card .book-img img {
+  width: 100%;
+  border-radius: 2rem;
+}
+.card .book-img:hover .book-img-addImg {
+  opacity: 1;
+  bottom: 5rem;
+  position: absolute;
+}
+.form-group {
+  margin: 1.5rem auto;
+  width: 80%;
+}
+.form-group label {
+  font-size: 1.5rem;
+  color: #4e4e50;
+}
+.form-group input {
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
+}
+.form-group .form-control {
+  padding: 2rem;
+}
+.tooltip-inner {
+  font-size: 1.5rem;
+  background-color: #181717;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #252527;
+}

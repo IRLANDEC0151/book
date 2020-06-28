@@ -13,8 +13,8 @@ const csrf = require("csurf");
 const varMiddleWare = require("./middleware/variables");
 const userMiddleWare = require("./middleware/user");
 const PORT = process.env.PORT || 8080;
-
-const app = express();
+const flash = require("connect-flash");
+const app = express(); 
 
 const hbs = exphbs.create({
   defaultLayout: "main",
@@ -24,7 +24,7 @@ const store = new MongoStore({
   collection: "sessions",
   uri:
     "mongodb+srv://Irlandec:GeMHhfW0ES0JxcIt@cluster0-eoeu8.mongodb.net/Book?retryWrites=true&w=majority",
-});
+});     
 //регистрируем движок
 app.engine("hbs", hbs.engine);
 //используем движок
@@ -56,6 +56,7 @@ app.use(
   })
 );
 //app.use(csrf());
+app.use(flash());
 app.use(varMiddleWare);
 app.use(userMiddleWare);
 app.use("/", require("./routes/home"));

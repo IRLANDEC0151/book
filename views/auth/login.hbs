@@ -1,1 +1,55 @@
-<h1>логин</h1>
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 login">
+        <div class="login-body">
+          <div class="login-head">
+            <p>С Возвращением!</p>
+          </div>
+          <div>
+            {{#if loginError}}
+            <p class="errorLogin">{{loginError}}</p>
+            {{/if}}
+          </div>
+          <form action="/auth/login" method="POST">
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                maxlength="30"
+                class="form-control"
+                placeholder="Email"
+                                  value="{{dataInput.email}}"
+                readonly
+                onmouseover="this.removeAttribute('readonly')"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                name="password"
+                maxlength="50"
+                minlength="8"
+                class="form-control"
+                placeholder="Пароль"
+                
+                required
+              />
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}" />
+            <button class="btn btn-primary login-comeIn">Войти</button>
+          </form>
+          <div class="login-resetOrCreate">
+            <a class="create" href="/auth/register">Создать аккаунт</a>
+            <hr />
+            <a href="/auth/reset">Забыли пароль?</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-6"></div>
+    </div>
+  </div>
+</main>

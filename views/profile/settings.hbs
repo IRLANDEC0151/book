@@ -2,30 +2,210 @@
   <section class="settings">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-3 col-lg-4 settings-nav">
+        <div class="col-xl-3 col-lg-3 settings-nav">
           <div
             class="nav flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
           >
-            <a class="nav-link "  href="/profile"
+            <a class="nav-link" href="/profile"
               ><img src="/homeBlack.svg" alt="" />Профиль</a
             >
-            <a class="nav-link"  href="/profile/addBook"
+            <a class="nav-link" href="/profile/addBook"
               ><img src="/addBlack.svg" alt="" />Добавить книгу</a
             >
-            <a class="nav-link"  href="/profile/favorites"
+            <a class="nav-link" href="/profile/favorites"
               ><img src="/favorite.svg" alt="" />Избранное</a
             >
-            <a class="nav-link active"  href="/profile/settings"
+            <a class="nav-link active" href="/profile/settings"
               ><img src="/settingBlack.svg" alt="" />Настройки</a
             >
           </div>
         </div>
-        <div class="col-xl-9 col-lg-7 settings-content">
+        <div class="col-xl-9 col-lg-9 settings-content">
+          {{!-- контакты --}}
+          <div class="card mb-5">
+
+            <div class="card-header">Мои контакты</div>
+            <div class="card-body">
+              <form action="">
+
+              <div class="settings-param">
+                <label class="settings-param-name">Имя:</label>
+                <input
+                  name="name"
+                  type="text"
+                  class="form-control settings-param-value"
+                  value="{{user.userName}}"
+                  maxlength="20"
+                  placeholder="ваше имя"
+                  required
+                />
+              </div>
+              <div class="settings-param">
+                <label class="settings-param-name">Телефон:</label>
+                <input
+                  name="phone"
+                  type="phone"
+                  class="form-control settings-param-value"
+                  id="phone"
+                    value="{{user.phone}}"
+                  maxlength="11"
+                  placeholder="указать телефон"
+                />
+              </div>
+              <div class="settings-param">
+                <label class="settings-param-name">Email:</label>
+                <input
+                  class="form-control settings-param-value"
+                   value="{{user.email}}"
+                  readonly
+                />
+              </div>
+              <div class="settings-param">
+                <label class="settings-param-name">Социальные сети:</label>
+                   <input
+                  class="form-control settings-param-socialLink"
+                  value="Санкт-Петербург"
+                  maxlength="60"
+                  style="opacity:0"
+                />
+                {{#each link}}
+                 <div class="settings-param-many">
+                <input
+                  name="userLink"
+                  type="text"
+                  class="form-control settings-param-socialLink"
+                   value="{{userLink}}"
+                  placeholder="ссылка на соц. сеть"
+                  maxlength="60"
+                  required
+                />
                </div>
-    </div>
+                {{/each}}
+                <button
+                  type="button"
+                  class="btn btn-success settings-param-addSocialLink"
+                  id="addSocialWebBtn"
+                  style="display: block;"
+                >
+                  <img src="/add.svg" width="15px" />Добавить социальную сеть
+                </button>
+              </div> 
+              <div class="settings-param">
+                <label class="settings-param-name">Адрес:</label>
+                  <input
+                  name="phone"
+                  type="phone"
+                  class="form-control settings-param-socialLink"
+                  id="phone"
+                  value="Санкт-Петербург"
+                  maxlength="60"
+                  style="opacity:0"
+                  required
+                />
+                <div class="settings-param-many">
+
+                <label>Город:</label>
+                <input
+                  name="phone"
+                  type="phone"
+                  class="form-control settings-param-address"
+                  id="phone"
+                  value="{{address.city}}"
+                  maxlength="60"
+                  required
+                />
+                </div>
+
+                <div class="settings-param-many">
+
+                <label>Улица:</label>
+                <input
+                  name="phone"
+                  type="phone"
+                  class="form-control settings-param-address"
+                  id="phone"
+                        value="{{address.street}}"
+                  maxlength="60"
+                  required
+                />
+                </div> 
+                <div class="settings-param-many">
+
+                <label>Дом:</label>
+                <input
+                  name="phone"
+                  type="phone"
+                  class="form-control settings-param-address"
+                  id="phone"
+                  value="{{address.house}}"
+                  maxlength="60"
+                  required
+                />
+                </div>
+              </div>
+              <div class="settings-param-save">
+                <button class="btn btn-primary">Сохранить</button>
+              </div>
+              </form>
+            </div>
+          </div> 
+          {{!-- персональные данные --}}
+          <div class="card mb-5" >
+            <div class="card-header">Сменить пароль</div>
+            <div class="card-body">
+              <form action="">
+
+              <div class="settings-param">
+                <label class="settings-param-name">Текущий пароль:</label>
+                <input
+                  name="password"
+                  type="phone"
+                  class="form-control settings-param-value"
+                  maxlength="30"
+                  required
+                />
+              </div>
+              <div class="settings-param">
+                <label class="settings-param-name">Новый пароль:</label>
+               <input
+                  name="password"
+                  type="phone"
+                  class="form-control settings-param-value"
+                  maxlength="30"
+                  required
+                />
+              </div>
+              <div class="settings-param">
+                <label class="settings-param-name">Повторить пароль:</label>
+                <input
+                  name="password"
+                  type="phone"
+                  class="form-control settings-param-value"
+                  maxlength="30"
+                  required
+                />
+              
+              </div>
+              <div class="settings-param-save">
+                <button class="btn btn-primary">Сохранить</button>
+              </div>
+              </form>
+
+            </div>
+          </div>
+          
+          {{!-- Выйти --}}
+          <div class="card mb-5" >
+            <div class="card-header">Сменить аккаунт</div>
+            <div class="card-body">
+            <a href="/auth/logout">  <button class="btn btn-danger logout">Выйти</button</a>  
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

@@ -8,19 +8,27 @@
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
-          >
+          >  <div class="profile-linkContent">
             <a class="nav-link active" 
               ><img src="/homeBlack.svg" alt="" />Профиль</a
             >
+            </div>
+            <div class="profile-linkContent">
+
             <a class="nav-link"  href="/profile/addBook"
-              ><img src="/addBlack.svg" alt="" />Добавить книгу</a
+              ><img src="/addBlack.svg" alt="" />Добавить книгу<span class="badge">{{book.length}}</span></a
             >
+            </div>
+             <div class="profile-linkContent">
             <a class="nav-link"  href="/profile/favorites"
-              ><img src="/favorite.svg" alt="" />Избранное</a
+              ><img src="/favorite.svg" alt="" />Избранное<span class="badge">{{user.favorites.length}}</span></a
             >
+            </div>
+            <div class="profile-linkContent">
             <a class="nav-link"  href="/profile/settings"
               ><img src="/settingBlack.svg" alt="" />Настройки</a
             >
+            </div>
           </div>
         </div>
         <div class="col-xl-9 col-lg-7 profile-content">
@@ -63,14 +71,18 @@
                                 data-placement="bottom"
                                 title="Редактировать"
                             /></a>
-                            <a href=""
+                            <form action="/profile/deleteBook" method="POST">
+                            <input type="hidden" name="_csrf" value="{{csrf}}">
+                           <input type="hidden" name="_id" value="{{ _id }}">
+                            <button type="submit"
                               ><img
                                 src="./deleteBook.svg"
                                 alt=""
                                 data-toggle="tooltip"
                                 data-placement="bottom"
                                 title="Удалить книгу"
-                            /></a>
+                            /></button>
+                            </form>
                           </div>
                         </div>
                       </div>

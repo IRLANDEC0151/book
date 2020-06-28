@@ -21,6 +21,12 @@ const userSchema = new Schema({
       ref: "Book",
     },
   ],
+  favorites: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 module.exports = model("User", userSchema);

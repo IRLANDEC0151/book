@@ -25,3 +25,33 @@ exports.registerValidators = [
     return true;
   }),
 ];
+
+exports.loginValidators = [
+  body("email")
+    .custom(async (value) => {
+      try {
+        const candidate = await User.findOne({ email: value });
+        if (!candidate) {
+          return Promise.reject("Неверный email или пароль");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })
+    .normalizeEmail(),
+  body("password").custom(async (value, { req }) => {
+    try {
+      const candidate = await User.findOne({ email: req.body.email });
+      if (!candidate) {
+        return Promise.reject("Неверный email или пароль");
+      }
+      const pass = await bcrypt.compare(value, candidate.password);
+
+      if (!pass) {
+        return Promise.reject("Неверный email или пароль");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }),
+]; 

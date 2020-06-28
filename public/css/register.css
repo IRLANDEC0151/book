@@ -1,0 +1,84 @@
+body {
+  background-image: url("/loginFon.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+}
+.login {
+  opacity: 0.85;
+  height: 75rem;
+  background-color: #549fc2;
+}
+.login-body {
+  text-align: center;
+  background-color: transparent;
+  margin: 12rem auto 0 auto;
+  width: 100%;
+  padding: 5rem;
+  border-radius: 2rem;
+}
+.login-head {
+  text-align: center;
+}
+.login-head p {
+  color: #111111;
+  font-weight: bold;
+  font-size: 4.5rem;
+}
+.login-foget {
+  color: white;
+  font-size: 1.5rem;
+}
+.login-foget:hover {
+  text-decoration: none;
+  color: white;
+}
+.login-comeIn {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 70%;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  border: 2px solid #152f86;
+  border-radius: 3rem;
+  background-color: #152f86;
+}
+.login-comeIn:hover {
+  border: 2px solid #04123f;
+  background-color: #04123f;
+}
+.form-group {
+  margin: 2rem auto;
+  width: 70%;
+}
+.form-group input {
+  font-size: 2rem;
+  height: 5rem;
+  padding-left: 3rem;
+  border-radius: 3rem;
+  border-color: #3959c4;
+  color: black;
+}
+.errorLogin {
+  font-size: 2rem;
+  color: #68141d;
+  background-color: #f7a9b0;
+  text-align: center;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}

@@ -1,26 +1,45 @@
 .profile {
   margin-top: 6rem;
 
+  &-linkContent {
+    width: 100%;
+    display: flex;
+    width: fit-content;
+    margin-left: 4rem;
+  }
   .nav-link {
     cursor: pointer;
+    min-width: 25.5rem;
     font-size: 1.7rem;
+    text-align: left;
     color: black;
     border-radius: 2rem;
-    width: 60%;
+    width: fit-content;
     margin: 4rem auto;
     transition-duration: 0.3s;
     height: 5rem;
     line-height: 4rem;
     img {
       position: relative;
-      margin-right: 2rem;
+      margin: 0 2rem;
       width: 2.2rem;
       top: -3px;
+    }
+    span {
+      color: black;
+      background-color: #dce4e0;
+      border-radius: 50%;
+      float: right;
+      position: relative;
+      top: 1.2rem;
     }
     &:hover {
       color: #fff;
       background-color: #252527;
-    } 
+      span {
+        background-color: white;
+      }
+    }
   }
   &-hello {
     p {
@@ -85,4 +104,13 @@
 .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #252527;
+}
+
+button:active, button:focus {
+  background-color: transparent;
+  outline: none !important;
+}
+button {
+  background-color: transparent;
+  border: 0 !important;
 }

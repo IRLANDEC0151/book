@@ -14,7 +14,10 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
-  status: Boolean,
+  status: {
+    type: Boolean,
+    default: false,
+  },
   description: String,
   userId: {
     type: Schema.Types.ObjectId,

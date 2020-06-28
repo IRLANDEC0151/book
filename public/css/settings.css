@@ -20,6 +20,82 @@
   background-color: #252527;
   color: #fff;
 }
+.settings .card-header {
+  font-size: 2rem;
+  background-color: #0c508a;
+  color: white;
+}
+.settings .card {
+  border: 1px solid #0c508a;
+  width: 70%;
+}
+.settings-param {
+  text-align: center;
+  margin-top: 3rem;
+}
+.settings-param-name {
+  display: inline-block;
+  text-align: right;
+  font-size: 1.7rem;
+  margin-right: 4rem;
+  font-weight: bold;
+  width: 22%;
+}
+.settings-param-value {
+  font-size: 1.7rem;
+  width: 40%;
+  display: inline-block;
+}
+.settings-param-socialLink {
+  position: relative;
+  left: 3.3rem;
+  display: inline-block;
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+  width: 40%;
+}
+.settings-param-address {
+  display: inline-block;
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+  width: 40%;
+}
+.settings-param-many {
+  margin-left: 10rem;
+}
+.settings-param-many label {
+  width: 10%;
+  font-size: 1.5rem;
+}
+.settings-param-addSocialLink {
+  position: relative;
+  left: 8rem;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.2rem;
+}
+.settings-param-addSocialLink img {
+  margin: 0 1rem 0 0.2rem;
+  position: relative;
+  top: -1.5px;
+}
+.settings-param-save {
+  text-align: center;
+  margin-top: 3rem;
+}
+.settings-param-save button {
+  font-size: 2rem;
+  background-color: #1e69ac;
+}
+.settings-param-save button:hover {
+  background-color: #0c508a;
+}
+.logout {
+  margin: 1rem;
+  font-size: 2rem;
+  width: 15rem;
+}
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
