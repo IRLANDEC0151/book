@@ -24,6 +24,7 @@
   }
   &-addOptionsBtn {
     text-align: center;
+    width: 50%;
     button {
       border-radius: 2rem;
       padding: 0.7rem 1.4rem;
@@ -36,6 +37,8 @@
     }
   }
   &-addBook {
+    width: 50%;
+
     text-align: center;
     button {
       font-size: 2rem;
@@ -45,6 +48,7 @@
 
 .card {
   border: none;
+  
   .book-img {
     margin: auto 0;
     cursor: pointer;
@@ -77,10 +81,17 @@
       }
     }
   }
+  .removeDescription {
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    right: 160px;
+    top: 180px;
+  }
 }
 .form-group {
   margin: 1.5rem auto; 
-  width: 80%;
   label {
     font-size: 1.5rem;
     color: rgb(78, 78, 80);
@@ -88,6 +99,7 @@
   input { 
     font-size: 1.4rem;
     border-radius: 1.5rem;
+    width: 50%;
   }
   .form-control {
     padding: 2rem;
