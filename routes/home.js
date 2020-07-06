@@ -86,9 +86,9 @@ router.post("/search",jsonParser, async (req, res) => {
   res.send({ result: concatData(bookData, authorData) });
 });
 
-function searchBook(books) {
-  books = books.filter(
-    (b, index, self) =>
+function searchBook(books) { 
+  books = books.filter( 
+    (b, index, self) => 
       self.findIndex(
         (t) => t.bookName === b.bookName && t.author === b.author
       ) === index

@@ -268,9 +268,9 @@ header {
 #bookOrAuthorList {
   z-index: 999;
   position: absolute;
-  width: 666px;
+  width: 58.5%;
   background-color: white;
-  left: 155px;
+  left: 140px;
   top: 398px;
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);

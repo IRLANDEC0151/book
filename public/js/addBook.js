@@ -16,7 +16,7 @@ function addDescription() {
                   <div class="form-group" id="descriptionOfBook">
                   <label for="exampleFormControlTextarea1"
                     >Комментарий</label
-                  >
+                  > 
                   <textarea
                     type="text"
                     name="description"

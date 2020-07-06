@@ -10,7 +10,6 @@ router.get("/", (req, res) => {
     user: req.user.toObject(),
     style: "/complete.css",
   });
-  console.log('тут');
   
 });
 module.exports = router;
