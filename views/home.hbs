@@ -16,7 +16,7 @@
               <a
                 class="nav-link active"
                 id="pills-home-tab"
-                data-toggle="pill" 
+                data-toggle="pill"
                 href="#pills-home"
                 role="tab"
                 aria-controls="pills-home"
@@ -55,7 +55,6 @@
                 </div>
                 <div id="bookOrAuthorList">
                   <ul id="search-ul"></ul>
-                  
                 </div>
                 <button type="submit" class="btn btn-primary">
                   Поиск
@@ -87,7 +86,6 @@
       </div>
     </div>
   </div>
-
 </header>
 
 <main>
@@ -145,346 +143,329 @@
         </p>
         <hr />
       </div>
-      <div class="row">
-        <div class="col-4">
-          <div
-            class="nav flex-column nav-pills"
-            id="v-pills-tab"
-            role="tablist"
-            aria-orientation="vertical"
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a
+            class="nav-item nav-link active"
+            id="nav-home-tab"
+            data-toggle="tab"
+            href="#v-pills-home"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+            ><strong>1.</strong> О книге</a
           >
-            <a
-              class="nav-link active"
-              id="v-pills-home-tab"
-              data-toggle="pill"
-              href="#v-pills-home"
-              role="tab"
-              aria-controls="v-pills-home"
-              aria-selected="true"
-              ><strong>1.</strong>  О книге</a
-            >
-            <a
-              class="nav-link"
-              id="v-pills-profile-tab"
+          <a
+            class="nav-item nav-link"
+            id="nav-profile-tab"
+            data-toggle="tab"
+            href="#v-pills-profile"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+            ><strong>2.</strong> Где забрать</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-phone-tab"
+            data-toggle="tab"
+            href="#v-pills-phone"
+            role="tab"
+            aria-controls="v-pills-phone"
+            aria-selected="false"
+            ><strong>3.</strong> Как с вами связаться</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="nav-reg-tab"
+            data-toggle="tab"
+            href="#v-pills-reg"
+            role="tab"
+            aria-controls="v-pills-reg"
+            aria-selected="false"
+            style="opacity: 0; pointer-events: none; cursor: default;"
+            >Регистрация</a
+          >
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        {{!-- О книге --}}
+        <div
+          class="tab-pane fade show active"
+          id="v-pills-home"
+          role="tabpanel"
+          aria-labelledby="v-pills-home-tab"
+          style="width: 100%;"
+        >
+          <p class="addbook-instruction">
+            Расскажите о книге, которой вы хотите поделиться.
+          </p>
+          <div style="width: 80%;">
+            <form id="firstForm" onsubmit="return false;">
+              <div class="form-group" id="beforeDescription">
+                <label for="exampleInputEmail1">Книга</label>
+                <input
+                  name="bookName"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  aria-describedby="emailHelp"
+                  placeholder="укажите название книги"
+                  data-type="book"
+                />
+              </div>
+              <button
+                class="btn btn-success addbook-addOptionsBtn"
+                id="addDescriptionBtn"
+              >
+                <img src="./add.svg" width="15px" />Комментарий
+              </button>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Автор</label>
+                <input
+                  name="author"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  placeholder="укажите автора книги"
+                  data-type="book"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1"
+                  >Жанр, описывающий книгу</label
+                >
+                <input
+                  name="genre"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  placeholder="укажите жанр"
+                  data-type="book"
+                />
+              </div>
+            </form>
+            <button
+              class="btn btn-primary addbook-nextBtn"
+              id="stepOne"
               data-toggle="pill"
               href="#v-pills-profile"
               role="tab"
               aria-controls="v-pills-profile"
-              aria-selected="false"
-              ><strong>2.</strong>  Где забрать</a
+              aria-selected="true"
             >
-            <a
-              class="nav-link"
+              Далее
+            </button>
+          </div>
+        </div>
+        {{!-- Где забрать --}}
+        <div
+          class="tab-pane fade"
+          id="v-pills-profile"
+          role="tabpanel"
+          aria-labelledby="v-pills-profile-tab"
+          style="width: 100%;"
+        >
+          <p class="addbook-instruction">
+            Укажите, где находится ваша книга.
+          </p>
+          <div style="width: 80%;">
+            <p class="addbook-instruction-sub">
+              Внимание! Мы не просим указать ваш точный адрес. Вы можете указать
+              только город и улицу. Это поможет читателям понять, где находится
+              книга на карте.
+            </p>
+
+            <form>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Город</label>
+                <input
+                  name="city"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  placeholder="укажите город"
+                  value="Санкт-Петербург"
+                  data-type="place"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Улица</label>
+                <input
+                  name="street"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  placeholder="укажите улицу"
+                  data-type="place"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Дом</label>
+                <input
+                  name="house"
+                  maxlength="10"
+                  type="text"
+                  class="form-control"
+                  placeholder="укажите дом"
+                  data-type="place"
+                />
+              </div>
+            </form>
+            <button
+              class="btn btn-primary addbook-nextBtn"
+              id="stepTwo"
               id="v-pills-phone-tab"
               data-toggle="pill"
               href="#v-pills-phone"
               role="tab"
-              aria-controls="v-pills-phone"
+              aria-controls="v-pills-profile"
               aria-selected="false"
-              ><strong>3.</strong> Как с вами связаться</a
-            >  
-            <a
-              class="nav-link"
-              id="v-pills-reg-tab"
-              data-toggle="pill"
+            >
+              Далее
+            </button>
+          </div>
+        </div>
+        {{!-- Как с вами связаться --}}
+        <div
+          class="tab-pane fade"
+          id="v-pills-phone"
+          role="tabpanel"
+          aria-labelledby="v-pills-profile-tab"
+          style="width: 100%;"
+        >
+          <p class="addbook-instruction">
+            Укажите информацию о себе, чтобы с вами было легко связаться.
+          </p>
+          <div style="width: 80%;">
+            <div>
+              <p id="errorBook"></p>
+            </div>
+
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Ваше имя</label>
+                <input
+                  name="userName"
+                  maxlength="100"
+                  type="text"
+                  class="form-control required"
+                  placeholder="Введите имя"
+                  data-type="user"
+                />
+              </div>
+              <p class="addbook-instruction-sub">
+                Мы не заставляем указывать все ваши контактные данные. Выберите
+                сами, как читатель сможет с вами связаться!
+              </p>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Указать email</label>
+                <input
+                  name="email"
+                  maxlength="30"
+                  type="email"
+                  class="form-control data-contact"
+                  placeholder="введите email"
+                />
+              </div>
+
+              <div class="form-group" id="beforeSocial">
+                <label for="exampleInputPassword1">Указать телефон</label>
+                <input
+                  name="phone"
+                  maxlength="11"
+                  type="phone"
+                  class="form-control data-contact"
+                  placeholder="пример: 89765432109"
+                  data-type="user"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-success addbook-addOptionsBtn"
+                id="addSocialWebBtn"
+                style="display: block;"
+              >
+                <img src="./add.svg" width="15px" />Указать социальную сеть
+              </button>
+            </form>
+            <button
+              class="btn btn-primary addbook-nextBtn"
+              id="stepThree"
+              id="v-pills-phone-tab"
               href="#v-pills-reg"
               role="tab"
               aria-controls="v-pills-reg"
-              aria-selected="false"
-              style="opacity: 0;pointer-events: none;cursor: default;"
-              >Регистрация</a
             >
-            <a class="addbook-bringbook" href="#bringBook"
-              >Куда я могу отнести книгу?</a
-            >
-            <p class="addbook-bringbook-text">
-              Если вы не хотите добавлять книгу на сайт, выберете одно из мест в
-              городе, где можно её оставить.
-            </p> 
-
-             <a class="addbook-bringbook" href="#"
-              >Хочу выложить целое место с книгами</a
-            >
-            <p class="addbook-bringbook-text">
-              Если вы владелец публичного места, где находятся книги.
-            </p>
+              Разместить книгу
+            </button>
           </div>
         </div>
-        <div class="col-8 addbook-steps">
-          <div class="tab-content" id="v-pills-tabContent">
-            {{!-- О книге --}}
-            <div
-              class="tab-pane fade show active"
-              id="v-pills-home"
-              role="tabpanel"
-              aria-labelledby="v-pills-home-tab"
-              style="width:100%"
-            >
-              <p class="addbook-instruction">
-                Расскажите о книге, которой вы хотите поделиться.
-              </p>
-              <div style="width:80%">
-
-              <form id="firstForm" onsubmit="return false;">
-                <div class="form-group" id="beforeDescription">
-                  <label for="exampleInputEmail1">Книга</label>
-                  <input
-                    name="bookName"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    aria-describedby="emailHelp"
-                    placeholder="укажите название книги"
-                    data-type='book'
-                  />
-                </div>
-                <button  class="btn btn-success addbook-addOptionsBtn" id="addDescriptionBtn">
-                  <img src="./add.svg" width="15px" />Комментарий
-                </button>
-                
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Автор</label>
-                  <input
-                      name="author"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    placeholder="укажите автора книги"
-                    data-type='book'
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1"
-                    >Жанр, описывающий книгу</label
-                  >
-                  <input
-                    name="genre"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    placeholder="укажите жанр"
-                    data-type='book'
-                  />
-                </div>
-              </form>
-                <button class="btn btn-primary addbook-nextBtn" id="stepOne"
-              data-toggle="pill"
-              href="#v-pills-profile"
-              role="tab"
-              aria-controls="v-pills-profile"
-              aria-selected="true">
-                 Далее
-                </button>
-             
+        {{!-- Регистрация --}}
+        <div
+          class="tab-pane fade"
+          id="v-pills-reg"
+          role="tabpanel"
+          aria-labelledby="v-pills-profile-reg"
+        >
+          <p class="addbook-instruction">
+            Пройдите быструю регистрацию.
+          </p>
+          <p class="addbook-instruction-reg">
+            Для защиты от спама и выкладывания информации не связанной с
+            книгами, мы просим вас пройти быструю регистрацию.Это поможет
+            сделать сервис лучше, а нас - сберечь от трудных ситуаций, спасибо.
+          </p>
+          <div class="addbook-register">
+            <div class="addbook-register-head">
+              <p>Регистрация</p>
+            </div>
+            <p id="errorRegister"></p>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Ваш email</label>
+                <input
+                  type="email"
+                  name="registerEmail"
+                  maxlength="30"
+                  class="form-control"
+                  placeholder="Введите email"
+                  required
+                />
               </div>
 
-            </div>
-            {{!-- Где забрать --}}
-            <div
-              class="tab-pane fade"
-              id="v-pills-profile"
-              role="tabpanel"
-              aria-labelledby="v-pills-profile-tab"
-               style="width:100%"
-            >
-              <p class="addbook-instruction">
-                Укажите, где находится ваша книга.
-              </p>
-            <div style="width:80%">
-
-              <p class="addbook-instruction-sub">
-                Внимание! Мы не просим указать ваш точный адрес. Вы можете
-                указать только город и улицу. Это поможет читателям понять, где
-                находится книга на карте.
-              </p>
-             
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Город</label>
-                  <input
-                    name="city"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    placeholder="укажите город"
-                    value="Санкт-Петербург"
-                    data-type='place'
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Улица</label>
-                  <input
-                    name="street"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    placeholder="укажите улицу"
-                    data-type='place'
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Дом</label>
-                  <input
-                    name="house"
-                    maxlength="10"
-                    type="text"
-                    class="form-control"
-                    placeholder="укажите дом"
-                    data-type='place'
-                  />
-                </div>
-              </form>
-                <button class="btn btn-primary addbook-nextBtn" id="stepTwo"  id="v-pills-phone-tab"
-              data-toggle="pill"
-              href="#v-pills-phone"
-              role="tab"
-              aria-controls="v-pills-profile"
-              aria-selected="false">
-                  Далее
-                </button>
-            </div>
-            </div>
-            {{!-- Как с вами связаться --}}
-            <div
-              class="tab-pane fade"
-              id="v-pills-phone"
-              role="tabpanel"
-              aria-labelledby="v-pills-profile-tab"
-               style="width:100%"
-            >
-              <p class="addbook-instruction">
-                Укажите информацию о себе, чтобы с вами было легко
-                связаться.
-              </p>
-            <div style="width:80%">
-                <div>
-                   <p id="errorBook" ></p>
-               </div>
-
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Ваше имя</label>
-                  <input
-                    name="userName"
-                    maxlength="100"
-                    type="text"
-                    class="form-control required"
-                    placeholder="Введите имя"
-                     data-type='user'
-                  />
-                </div>
-                <p class="addbook-instruction-sub">
-                  Мы не заставляем указывать все ваши контактные данные.
-                  Выберите сами, как читатель сможет с вами связаться!
-                </p>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Указать email</label>
-                  <input
-                    name="email"
-                    maxlength="30"
-                    type="email"
-                    class="form-control data-contact"
-                    placeholder="введите email"
-                  />
-                </div>
-
-                <div class="form-group" id="beforeSocial">
-                  <label for="exampleInputPassword1">Указать телефон</label>
-                  <input
-                    name="phone"
-                    maxlength="11"
-                    type="phone"
-                    class="form-control data-contact"
-                    placeholder="пример: 89765432109"
-                    data-type='user'
-                  />
-                </div>
-
-                <button
-                  type="button"
-                  class="btn btn-success addbook-addOptionsBtn"
-                  id="addSocialWebBtn"
-                  style="display: block;"
-                >
-                  <img src="./add.svg" width="15px" />Указать социальную сеть
-                </button>
-              </form>
-                  <button  class="btn btn-primary addbook-nextBtn" id="stepThree" 
-                    id="v-pills-phone-tab"
-              href="#v-pills-reg"
-              role="tab"
-              aria-controls="v-pills-reg">
-                  Разместить книгу
-                </button>
-            </div>
-            </div>  
-            {{!-- Регистрация --}}
-            <div
-              class="tab-pane fade"
-              id="v-pills-reg"
-              role="tabpanel"
-              aria-labelledby="v-pills-profile-reg"
-            >
-              <p class="addbook-instruction">
-               Пройдите быструю регистрацию.
-              </p>
-               <p class="addbook-instruction-reg">
-                Для защиты от спама и выкладывания информации не связанной с книгами, мы просим вас пройти быструю регистрацию.Это поможет сделать сервис лучше, а нас - сберечь от трудных ситуаций, спасибо.
-              </p>
-              <div class="addbook-register">
-                <div class="addbook-register-head">
-                  <p>Регистрация</p>
-                  
-                </div>
-                <p id="errorRegister"></p>
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Ваш email</label>
-                  <input
-                    type="email"
-                    name="registerEmail"
-                    maxlength="30"
-                    class="form-control"
-                    placeholder="Введите email"
-                    required
-                  />
-                </div>
-             
-                <div class="form-group" id="beforeSocial">
-                  <label for="exampleInputPassword1">Пароль</label>
-                  <input
-                    type="password"
-                      name="password"
-                    maxlength="50"
-                    minlength="8"
-                    class="form-control"
-                    placeholder="не менее 8 символов"
-                    
-                    required
-                  />
-                </div> 
-                  <div class="form-group" id="beforeSocial">
-                  <label for="exampleInputPassword1">Повторить пароль</label>
-                  <input
-                    name="confirm"
-                    maxlength="50"
-                    type="password"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <input type="hidden" name="_csrf" value="{{csrf}}" />
-              </form>
-              <div class="addbook-register-btn">
-                <button type="text" class="btn btn-primary" id="reg"
-              > 
-                  Регистрация
-                </button>
-
+              <div class="form-group" id="beforeSocial">
+                <label for="exampleInputPassword1">Пароль</label>
+                <input
+                  type="password"
+                  name="password"
+                  maxlength="50"
+                  minlength="8"
+                  class="form-control"
+                  placeholder="не менее 8 символов"
+                  required
+                />
               </div>
-                  <a href="/">Уже есть аккаунт?</a>
+              <div class="form-group" id="beforeSocial">
+                <label for="exampleInputPassword1">Повторить пароль</label>
+                <input
+                  name="confirm"
+                  maxlength="50"
+                  type="password"
+                  class="form-control"
+                  required
+                />
               </div>
+              <input type="hidden" name="_csrf" value="{{csrf}}" />
+            </form>
+            <div class="addbook-register-btn">
+              <button type="text" class="btn btn-primary" id="reg">
+                Регистрация
+              </button>
             </div>
+            <a href="/">Уже есть аккаунт?</a>
           </div>
         </div>
       </div>
