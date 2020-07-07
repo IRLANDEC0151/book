@@ -353,6 +353,47 @@ header {
     background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
   }
 }
+.createPlace{
+  background-color: #ff9c19;
+  text-align: center;
+  padding: 4rem;
+  position: relative;
+  z-index: 1;
+  button {
+    background-color: #fd5000;
+    border: none;
+    font-size: 2.7rem;
+    margin: 3rem 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &:hover {
+      background-color: #ee5700;
+
+    }
+  }
+  p {
+    color: white;
+    margin: 0 auto;
+    width: 60%;
+    font-size: 2.4rem;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: repeat;
+    opacity: 0.2;
+    background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
+  }
+}
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
