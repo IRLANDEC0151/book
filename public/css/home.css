@@ -108,9 +108,22 @@ header {
   background-color: #f58787;
 }
 .addbook {
+  position: relative;
+  z-index: 1;
   background-color: #daeb7a;
   padding: 3rem 0;
-  margin-bottom: 20rem;
+}
+.addbook::before {
+  z-index: -1;
+  background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  opacity: 0.3;
 }
 .addbook-header {
   text-align: center;
@@ -164,28 +177,6 @@ header {
 }
 .addbook-instruction-reg {
   font-size: 2rem;
-}
-.addbook-bringbook {
-  text-align: center;
-  padding: 1rem;
-  font-size: 2rem;
-  margin-top: 6rem;
-  background-color: #ff9100;
-  color: white;
-  transition-duration: 0.5s;
-  border: 4px solid white;
-}
-.addbook-bringbook-text {
-  width: 87%;
-  margin-top: 1rem;
-  font-size: 1.7rem;
-  text-align: center;
-  color: #ff9100;
-}
-.addbook-bringbook:hover {
-  color: #2b2a2a;
-  background-color: #f7872c;
-  text-decoration: none;
 }
 .addbook-nextBtn {
   margin-top: 3rem;
@@ -306,6 +297,46 @@ header {
   position: relative;
   top: -3px;
   width: 25px;
+}
+.bringbook {
+  background-color: #ff9c19;
+  text-align: center;
+  padding: 4rem;
+  position: relative;
+  z-index: 1;
+}
+.bringbook button {
+  background-color: #fd5000;
+  border: none;
+  font-size: 2.7rem;
+  margin: 3rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.bringbook button:hover {
+  background-color: #ee5700;
+}
+.bringbook p {
+  color: white;
+  margin: 0 auto;
+  width: 60%;
+  font-size: 2.4rem;
+}
+.bringbook a {
+  text-decoration: none;
+  color: white;
+}
+.bringbook::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat;
+  opacity: 0.2;
+  background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

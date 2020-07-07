@@ -5,7 +5,7 @@ $(document).ready(function () {
     let top = $(id).offset().top;
     $("body,html").animate({ scrollTop: top }, 1200);
   });
-  $(".addbook-bringbook").on("click", function (event) {
+  $(".bringbook").on("click", "a", function (event) {
     event.preventDefault();
     let id = $(this).attr("href");
     let top = $(id).offset().top;
@@ -70,7 +70,7 @@ function addSocialLink(event) {
   ) {
     if (event.target.tagName == "IMG") {
       addSocialBtn.innerHTML = ` <img src="./add.svg" width="15px"  />Указать
-        социальную сеть`; 
+        социальную сеть`;
       this.remove();
     }
   };
