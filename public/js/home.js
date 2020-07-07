@@ -57,8 +57,8 @@ function addSocialLink(event) {
       class="form-control required data-contact"
       id="exampleInputPassword1"
       placeholder=" пример: ${socialLinkExample[countSpan]}"
-      style="font-size: 1.5rem"
-      data-type='userLink'
+      style="font-size: 1.5rem;background-color: lightskyblue;"
+      data-type='userLink'   
 
       required
     />  
@@ -70,7 +70,7 @@ function addSocialLink(event) {
   ) {
     if (event.target.tagName == "IMG") {
       addSocialBtn.innerHTML = ` <img src="./add.svg" width="15px"  />Указать
-        социальную сеть`;
+        социальную сеть`; 
       this.remove();
     }
   };
@@ -92,7 +92,7 @@ function addDescription() {
     `
                   <div class="form-group" id="descriptionOfBook">
                   <label for="exampleFormControlTextarea1"
-                    >Комментарий к книге</label
+                    >Описание книги</label
                   >
                   <textarea
                     type="text"
@@ -101,7 +101,7 @@ function addDescription() {
                     class="form-control required"
                     id="exampleFormControlTextarea1"
                     placeholder="Расскажите о вашей книге"
-                    style="resize: none; font-size: 1.5rem; width: 100%;"
+                    style="resize: none; font-size: 1.5rem; width: 50%;"
                     maxlength="400"
                     data-type='book'
 
@@ -127,14 +127,14 @@ let stepThreeBtn = document.getElementById("stepThree");
 
 stepOneBtn.addEventListener("click", function () {
   stepOneBtn.setAttribute("data-toggle", "pill");
-  document.getElementById("v-pills-home-tab").classList.remove("active");
-  document.getElementById("v-pills-profile-tab").classList.add("active");
+  document.getElementById("nav-home-tab").classList.remove("active");
+  document.getElementById("nav-profile-tab").classList.add("active");
   stepOneBtn.classList.remove("active");
 });
 stepTwoBtn.addEventListener("click", function () {
   stepTwoBtn.setAttribute("data-toggle", "pill");
-  document.getElementById("v-pills-profile-tab").classList.remove("active");
-  document.getElementById("v-pills-phone-tab").classList.add("active");
+  document.getElementById("nav-profile-tab").classList.remove("active");
+  document.getElementById("nav-phone-tab").classList.add("active");
   stepTwoBtn.classList.remove("active");
 });
 stepThreeBtn.addEventListener("click", async function () {

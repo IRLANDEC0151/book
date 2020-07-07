@@ -108,31 +108,19 @@ header {
   background-color: #f58787;
 }
 .addbook {
-  position: relative;
   background-color: #daeb7a;
   padding: 3rem 0;
   margin-bottom: 20rem;
-}
-.addbook::before {
-  background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-repeat: repeat;
-  opacity: 0.5;
 }
 .addbook-header {
   text-align: center;
 }
 .addbook-header-title {
-  font-size: 4.3rem;
+  font-size: 4rem;
 }
 .addbook-header-description {
   margin-top: 2rem;
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 .addbook-header hr {
   margin: 4rem auto;
@@ -153,18 +141,24 @@ header {
 }
 .addbook .form-control {
   padding: 2.3rem;
-  width: 60%;
+  width: 50%;
+  margin: 0 auto;
 }
 .addbook .nav-link {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
-.addbook .nav-pills {
-  width: fit-content;
+.addbook .nav {
+  margin-bottom: 4rem;
+}
+.addbook .tab-pane {
+  text-align: center;
 }
 .addbook-instruction {
   font-size: 2.8rem;
 }
 .addbook-instruction-sub {
+  margin: 0 auto;
+  width: 50%;
   font-size: 1.5rem;
   color: #b12121;
 }
@@ -172,7 +166,6 @@ header {
   font-size: 2rem;
 }
 .addbook-bringbook {
-  width: 87%;
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
@@ -213,25 +206,23 @@ header {
   display: flex;
   align-items: center;
   position: absolute;
-  height: 100%;
   cursor: pointer;
-  bottom: -1.1rem;
-  right: 17rem;
+  bottom: 0.9rem;
+  right: 23rem;
 }
 .addbook .removeDescription {
   display: flex;
   align-items: center;
   position: absolute;
-  height: 100%;
   cursor: pointer;
-  bottom: -1.1rem;
-  right: -5rem;
+  bottom: 4rem;
+  right: 23rem;
 }
 .addbook-register {
   background-color: white;
   padding: 2rem 0;
-  margin: 0 auto;
   width: 60%;
+  margin: 4rem auto;
   border-radius: 10px;
   text-align: center;
 }
@@ -243,7 +234,7 @@ header {
 .addbook-register-btn button {
   margin: 1rem 0 2rem 0;
   font-size: 2rem;
-  width: 60%;
+  width: 50%;
   border-radius: 2rem;
 }
 .addbook-register input {
@@ -254,13 +245,13 @@ header {
   font-size: 1.5rem;
 }
 .addbook-errorInput {
-  width: 80%;
+  width: fit-content;
   margin: 0 auto;
   font-size: 2rem;
-  color: red;
-  background-color: #f58484;
+  color: white;
+  background-color: #f04b4b;
   text-align: center;
-  padding: 0.7rem 0rem;
+  padding: 0.7rem 3rem;
   border-radius: 1rem;
 }
 #bookOrAuthorList {

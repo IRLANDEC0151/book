@@ -110,7 +110,7 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="map-header">
-            <p>Найдите любую книгу на карте</p>
+            <p>Найди свою книгу на карте</p>
           </div>
         </div>
       </div>
@@ -131,6 +131,20 @@
       </div>
     </div>
   </section>
+   {{!-- кнопка добавить место с книгами --}}
+  <section>
+    <div class="search-add">
+      <p>
+        Если у вас дома много прочитанных книг, которые пылятся на полке и вы не
+        знаете, что с ними сделать. Или вы прочитали невероятно интересный роман
+        и скорее хотите им поделиться, то
+        <strong> Перекресток книг </strong> вам в помощь.
+      </p>
+      <button class="btn btn-info">
+        <a href="#addBookSection">Добавить свою книгу</a>
+      </button>
+    </div>
+  </section>
   {{!-- форма с добавлением книги --}}
   <section class="addbook" id="addBookSection">
     <div class="container">
@@ -144,7 +158,7 @@
         <hr />
       </div>
       <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <div class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
           <a
             class="nav-item nav-link active"
             id="nav-home-tab"
@@ -183,7 +197,7 @@
             role="tab"
             aria-controls="v-pills-reg"
             aria-selected="false"
-            style="opacity: 0; pointer-events: none; cursor: default;"
+            style="opacity: 0; pointer-events: none; cursor: default; display: none;"
             >Регистрация</a
           >
         </div>
@@ -200,7 +214,7 @@
           <p class="addbook-instruction">
             Расскажите о книге, которой вы хотите поделиться.
           </p>
-          <div style="width: 80%;">
+          <div >
             <form id="firstForm" onsubmit="return false;">
               <div class="form-group" id="beforeDescription">
                 <label for="exampleInputEmail1">Книга</label>
@@ -218,7 +232,7 @@
                 class="btn btn-success addbook-addOptionsBtn"
                 id="addDescriptionBtn"
               >
-                <img src="./add.svg" width="15px" />Комментарий
+                <img src="./add.svg" width="15px" />Описание
               </button>
 
               <div class="form-group">
@@ -270,7 +284,7 @@
           <p class="addbook-instruction">
             Укажите, где находится ваша книга.
           </p>
-          <div style="width: 80%;">
+          <div >
             <p class="addbook-instruction-sub">
               Внимание! Мы не просим указать ваш точный адрес. Вы можете указать
               только город и улицу. Это поможет читателям понять, где находится
@@ -338,7 +352,7 @@
           <p class="addbook-instruction">
             Укажите информацию о себе, чтобы с вами было легко связаться.
           </p>
-          <div style="width: 80%;">
+          <div >
             <div>
               <p id="errorBook"></p>
             </div>
@@ -386,7 +400,6 @@
                 type="button"
                 class="btn btn-success addbook-addOptionsBtn"
                 id="addSocialWebBtn"
-                style="display: block;"
               >
                 <img src="./add.svg" width="15px" />Указать социальную сеть
               </button>
@@ -415,8 +428,8 @@
           </p>
           <p class="addbook-instruction-reg">
             Для защиты от спама и выкладывания информации не связанной с
-            книгами, мы просим вас пройти быструю регистрацию.Это поможет
-            сделать сервис лучше, а нас - сберечь от трудных ситуаций, спасибо.
+            книгами, мы просим вас пройти быструю регистрацию. Это поможет
+            сделать сервис лучше, а нас - сберечь от трудных ситуаций.
           </p>
           <div class="addbook-register">
             <div class="addbook-register-head">

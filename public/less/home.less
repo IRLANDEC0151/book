@@ -117,29 +117,29 @@ header {
   }
 }
 .addbook {
-   position: relative;
-  &::before {
-    background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-repeat: repeat;
-    opacity: 0.5;
-  }
+   //position: relative;
+  //  &::before {
+  //   background-image: url(https://www.oracle.com/asset/web/i/rw-natural06-15p.png) !important;
+  //   position: absolute;
+  //   content: "";
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   background-repeat: repeat;
+  //   opacity: 0.5;
+  // }
   background-color: rgb(218, 235, 122);
   padding: 3rem 0;
   margin-bottom: 20rem;
   &-header {
     text-align: center;
     &-title {
-      font-size: 4.3rem;
+      font-size: 4rem;
     }
     &-description {
       margin-top: 2rem;
-      font-size: 2.3rem;
+      font-size: 2rem;
     }
     hr {
       margin: 4rem auto;
@@ -152,6 +152,7 @@ header {
     position: relative;
     label {
       font-size: 1.5rem;
+      
       color: rgb(78, 78, 80);
     }
     input {
@@ -159,20 +160,27 @@ header {
       border-radius: 1.5rem;
     }
   }
-  .form-control {
+  .form-control{
     padding: 2.3rem;
-    width: 60%;
+    width: 50%;
+    margin: 0 auto;
+    
   }
   .nav-link {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
-  .nav-pills {
-    width: fit-content;
+  .nav{
+    margin-bottom: 4rem;
+  }
+  .tab-pane{
+    text-align: center;
   }
 
   &-instruction {
     font-size: 2.8rem;
     &-sub {
+      margin: 0 auto;
+      width: 50%;
       font-size: 1.5rem;
       color: rgb(177, 33, 33);
     }
@@ -182,7 +190,7 @@ header {
   }
 
   &-bringbook {
-    width: 87%;
+    //width: 87%;
     text-align: center;
     padding: 1rem;
     font-size: 2rem;
@@ -223,25 +231,23 @@ header {
     display: flex;
     align-items: center;
     position: absolute;
-    height: 100%;
     cursor: pointer;
-    bottom: -1.1rem;
-    right: 17rem;
+    bottom: 0.9rem;
+    right: 23rem;
   }
   .removeDescription {
     display: flex;
     align-items: center;
     position: absolute;
-    height: 100%;
     cursor: pointer;
-    bottom: -1.1rem;
-    right: -5rem;
+    bottom: 4rem;
+    right: 23rem;
   }
   &-register {
     background-color: white;
     padding: 2rem 0;
-    margin: 0 auto;
     width: 60%;
+    margin: 4rem auto;
     border-radius: 10px;
     text-align: center;
     &-head {
@@ -253,7 +259,7 @@ header {
       button {
         margin: 1rem 0 2rem 0;
         font-size: 2rem;
-        width: 60%;
+        width: 50%;
         border-radius: 2rem;
       }
     }
@@ -266,13 +272,13 @@ header {
     }
   }
   &-errorInput {
-    width: 80%;
+    width:fit-content;
     margin: 0 auto;
     font-size: 2rem;
-    color: red;
-    background-color: rgb(245, 132, 132);
+    color: white;
+    background-color: rgb(240, 75, 75);
     text-align: center;
-    padding: 0.7rem 0rem;
+    padding: 0.7rem 3rem;
     border-radius: 1rem;
   }
 }
