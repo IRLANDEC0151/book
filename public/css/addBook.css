@@ -45,7 +45,7 @@
   background-color: #252527;
 }
 .addBook-header {
-  margin: 4rem auto;
+  margin: 3rem auto;
 }
 .addBook-header p {
   font-size: 5rem;
@@ -56,11 +56,9 @@
 .addBook-instruction strong {
   cursor: pointer;
   color: #5252c7;
-  border-bottom: 2px solid #5252c7;
   transition-duration: 0.2s;
 }
 .addBook-instruction strong:hover {
-  border-bottom: 2px solid white;
   color: #070783;
 }
 .addBook-addOptionsBtn {
@@ -88,9 +86,15 @@
   border: none;
 }
 .card .book-img {
-  margin: auto 0;
+  margin-top: 5rem;
   cursor: pointer;
   transition-duration: 0.3s;
+}
+.card .book-img img {
+  width: 100%;
+  border-radius: 2rem;
+  transition-duration: 0.5s;
+  box-shadow: 0rem 1rem 2rem grey;
 }
 .card .book-img-addImg {
   position: absolute;
@@ -98,15 +102,6 @@
   left: 7rem;
   opacity: 0;
   transition-duration: 0.3s;
-}
-.card .book-img p {
-  font-size: 2rem;
-  color: #173658;
-}
-.card .book-img img {
-  width: 100%;
-  border-radius: 2rem;
-  transition-duration: 0.5s;
 }
 .card .book-img:hover {
   transform: scale(1.1);
@@ -139,6 +134,31 @@
 }
 .form-group .form-control {
   padding: 2rem;
+}
+.instruction {
+  margin-top: 3rem;
+}
+.instruction-head {
+  text-align: center;
+}
+.instruction-head p {
+  font-size: 4rem;
+}
+.accordion {
+  margin-bottom: 10rem;
+}
+.accordion .card-header {
+  border: none;
+  background-color: white;
+}
+.accordion .card button {
+  font-size: 2rem;
+}
+.accordion .card-body-header p {
+  font-size: 3rem;
+}
+.accordion .card-body-instruction p {
+  font-size: 2rem;
 }
 .tooltip-inner {
   font-size: 1.5rem;

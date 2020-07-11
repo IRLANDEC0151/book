@@ -299,22 +299,19 @@ header {
   width: 25px;
 }
 .bringbook {
-  background-color: #ff9c19;
+  background-color: #70c5c1;
   text-align: center;
   padding: 4rem;
   position: relative;
   z-index: 1;
 }
 .bringbook button {
-  background-color: #fd5000;
+  background-color: #249993;
   border: none;
   font-size: 2.7rem;
   margin: 3rem 0;
   padding-left: 2rem;
   padding-right: 2rem;
-}
-.bringbook button:hover {
-  background-color: #ee5700;
 }
 .bringbook p {
   color: white;
@@ -339,22 +336,19 @@ header {
   background-image: url("https://www.oracle.com/asset/web/i/rw-natural07.png");
 }
 .createPlace {
-  background-color: #ff9c19;
+  background-color: #98c0be;
   text-align: center;
   padding: 4rem;
   position: relative;
   z-index: 1;
 }
 .createPlace button {
-  background-color: #fd5000;
+  background-color: #249993;
   border: none;
   font-size: 2.7rem;
   margin: 3rem 0;
   padding-left: 2rem;
   padding-right: 2rem;
-}
-.createPlace button:hover {
-  background-color: #ee5700;
 }
 .createPlace p {
   color: white;

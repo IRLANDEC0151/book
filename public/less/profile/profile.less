@@ -1,15 +1,17 @@
-@import "./navLink"; 
+@import "./navLink";
 
 .profile {
-  &-hello { 
+  &-hello {
+    margin-top: 3rem;
     p {
       font-size: 4.5rem;
     }
   }
   &-header {
+    display: inline-block;
     margin: 4rem 0;
     p {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 }
@@ -18,9 +20,10 @@
   border: none;
   .book-img {
     img {
-      height: 100%; 
+      height: 100%;
       width: 100%;
       border-radius: 2rem;
+    
     }
   }
   &-body {
@@ -55,8 +58,41 @@
     }
   }
 }
-  
+.alert-info {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: rgb(8, 85, 121);
+  float: right;
+  border-radius: .5rem;
+  img {
+    width: 4rem;
+    margin: 0 1rem;
+    position: relative;
+    top: -1rem;
+  }
+}
+.alert-success {
+  position: fixed;
 
+  top: 7rem;
+  z-index: 999;
+  opacity: 0.95;
+  text-align: center;
+  h4 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  span {
+    font-size: 3rem;
+  }
+}
+.spinner-border {
+  margin: 1.5rem 0;
+  width: 3rem;
+  height: 3rem;
+}
 .tooltip-inner {
   font-size: 1.5rem;
   background-color: rgb(24, 23, 23);

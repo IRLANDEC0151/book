@@ -2,7 +2,7 @@
 
 .addBook {
   &-header {
-    margin: 4rem auto;
+    margin: 3rem auto;
     p {
       font-size: 5rem;
     }
@@ -14,10 +14,8 @@
     strong {
       cursor: pointer;
       color: rgb(82, 82, 199);
-      border-bottom: 2px solid rgb(82, 82, 199);
       transition-duration: 0.2s;
       &:hover {
-        border-bottom: 2px solid white;
         color: rgb(7, 7, 131);
       }
     }
@@ -48,12 +46,18 @@
 
 .card {
   border: none;
-  
+
   .book-img {
-    margin: auto 0;
+    margin-top: 5rem;
     cursor: pointer;
     transition-duration: 0.3s;
 
+    img {
+      width: 100%;
+      border-radius: 2rem;
+      transition-duration: 0.5s;
+      box-shadow: 0rem 1rem 2rem grey;
+    }
     &-addImg {
       position: absolute;
       bottom: 1rem;
@@ -61,21 +65,11 @@
       opacity: 0;
       transition-duration: 0.3s;
     }
-    p {
-      font-size: 2rem;
-      color: rgb(23, 54, 88);
-    }
-    img {
-      width: 100%;
-      border-radius: 2rem;
-      transition-duration: 0.5s;
-    
-    }
     &:hover {
+      transform: scale(1.1);
+      .book-img-addImg {
+        opacity: 1;
         transform: scale(1.1);
-        .book-img-addImg {
-          opacity: 1;
-          transform: scale(1.1);
         bottom: 6rem;
         position: absolute;
       }
@@ -91,18 +85,52 @@
   }
 }
 .form-group {
-  margin: 1.5rem auto; 
+  margin: 1.5rem auto;
   label {
     font-size: 1.5rem;
     color: rgb(78, 78, 80);
   }
-  input { 
+  input {
     font-size: 1.4rem;
     border-radius: 1.5rem;
     width: 50%;
   }
   .form-control {
     padding: 2rem;
+  }
+}
+
+.instruction {
+  margin-top: 3rem;
+  &-head {
+    text-align: center;
+    p {
+      font-size: 4rem;
+    }
+  }
+}
+.accordion {
+  margin-bottom: 10rem;
+  .card {
+    &-header {
+      border: none;
+      background-color: white;
+    }
+    button {
+      font-size: 2rem;
+    }
+    &-body {
+      &-header {
+        p {
+          font-size: 3rem;
+        }
+      }
+      &-instruction{
+        p{
+          font-size: 2rem;
+        }
+      }
+    }
   }
 }
 .tooltip-inner {

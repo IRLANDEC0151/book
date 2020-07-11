@@ -13,7 +13,7 @@ router.get("/", auth.auth, async (req, res) => {
     title: "Профиль",
     user: req.user.toObject(),
     style: "/profile.css",
-    script: "/profile.js",
+    script: "/profile/profile.js",
     book: book,
   });
 });
@@ -31,9 +31,9 @@ router.get("/settings", async (req, res) => {
 router.get("/addBook", async (req, res) => {
   res.render("profile/addBook", {
     title: "Настройки профиля",
-    user: req.user.toObject(),
+    user: req.user.toObject(),  
     style: "/addBook.css",
-    script: "/addBook.js",
+    script: "/profile/addBook.js",
   });
 });
 router.post("/addBook", async (req, res) => {
@@ -67,12 +67,24 @@ router.post("/deleteBook", async (req, res) => {
   }
 });
 
+router.delete("/remove/:id", async (req, res) => {
+  try {
+    const book = await Book.findOne({ _id: req.params.id });
+    book.status = book.status === false ? true : false;
+    await book.save();
+    res.status(200).json({status: book.status});
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 function mapBookItems(book) {
   return book.map((b) => ({
     bookName: b.bookName,
     author: b.author,
     genre: b.genre,
-    _id: b._id,
+    status: b.status,
+    id: b._id,
   }));
 }
 function mapLinkItems(link) {

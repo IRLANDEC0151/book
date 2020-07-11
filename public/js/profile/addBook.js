@@ -1,4 +1,11 @@
-
+$(document).ready(function () {
+  $(".addBook-instruction").on("click",'a',function (event) {
+    event.preventDefault();
+    let id = $(this).attr("href");
+    let top = $(id).offset().top;
+    $("body,html").animate({ scrollTop: top }, 1200);
+  });
+});
 //добавление описания к книге
 let isDescription = false;
 let addDescriptionBtn = document.getElementById("addDescriptionBtn");
@@ -6,7 +13,7 @@ addDescriptionBtn.addEventListener("click", addDescription);
 let descriptionInput = document.getElementsByName("description");
 
 function addDescription() {
-  if (isDescription) { 
+  if (isDescription) {
     return 0;
   }
   isDescription = true;

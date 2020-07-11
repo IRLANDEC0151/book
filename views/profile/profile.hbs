@@ -1,33 +1,46 @@
+<div class="alert alert-success fade show d-none" role="alert">
+  
+  <h4 class="alert-heading">Отличная работа!</h4>
+  <p>Вы успешно отметили книгу как отданную.</p>
+  <hr>
+  <p class="mb-0">Если книга к вам снова вернется не забудьте отметить это в вашем профиле.</p>
+  
+</div>
 <main>
-  <section class=" navigate profile">
+  <section class="navigate profile">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-3 col-lg-4 ">
+        <div class="col-xl-3 col-lg-4">
           <div
             class="nav flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
-          >  <div class="navigate-linkContent">
-            <a class="nav-link active" 
-              ><img src="/homeBlack.svg" alt="" />Профиль</a
-            >
+          >
+            <div class="navigate-linkContent">
+              <a class="nav-link active"
+                ><img src="/homeBlack.svg" alt="" />Профиль</a
+              >
             </div>
             <div class="navigate-linkContent">
-
-            <a class="nav-link"  href="/profile/addBook"
-              ><img src="/addBlack.svg" alt="" />Добавить книгу<span class="badge">{{user.books.length}}</span></a
-            >
-            </div>
-             <div class="navigate-linkContent">
-            <a class="nav-link"  href="/profile/favorites"
-              ><img src="/favorite.svg" alt="" />Избранное<span class="badge">{{user.favorites.length}}</span></a
-            >
+              <a class="nav-link" href="/profile/addBook"
+                ><img src="/addBlack.svg" alt="" />Добавить книгу<span
+                  class="badge"
+                  >{{user.books.length}}</span
+                ></a
+              >
             </div>
             <div class="navigate-linkContent">
-            <a class="nav-link"  href="/profile/settings"
-              ><img src="/settingBlack.svg" alt="" />Настройки</a
-            >
+              <a class="nav-link" href="/profile/favorites"
+                ><img src="/favorite.svg" alt="" />Избранное<span class="badge"
+                  >{{user.favorites.length}}</span
+                ></a
+              >
+            </div>
+            <div class="navigate-linkContent">
+              <a class="nav-link" href="/profile/settings"
+                ><img src="/settingBlack.svg" alt="" />Настройки</a
+              >
             </div>
           </div>
         </div>
@@ -38,14 +51,20 @@
           <div class="container">
             <div class="row">
               <div class="col-xl-12">
-                 {{#if book}}
+                {{#if book}}
 
-               
                 <div class="profile-header">
                   <p>Мои добавленные книги</p>
                 </div>
+                <div class="alert alert-info" role="alert">
+                 Если вы отдали 
+                  <img src="/box (3).svg" alt="" /> книгу, не забудьте указать это.
+                </div>
                 {{!-- карточки с книгами --}}
-                <div class="row row-cols-xl-2 row-cols-lg-1">
+                <div
+                  class="row row-cols-xl-2 row-cols-lg-1"
+                  id="bookCollection"
+                >
                   {{#each book}}
                   <div class="card mb-5">
                     <div class="row no-gutters">
@@ -61,42 +80,70 @@
                           <p class="card-title">{{bookName}}</p>
                           <p class="card-text">{{author}}</p>
                           <p class="card-text">{{genre}}</p>
-                          <div class="card-give">
-                            <img src="./giveBook.svg" alt="" />
+                          <div class="card-give ">
+                            
+                            <div class="spinner-border" style="display:none">
+                              
+                            </div>
+                            {{#if status}}
+                            <img
+                              src="/box (4).svg"
+                              class="card-give-img "
+                              alt=""
+                              data-status="{{status}}"
+                              data-id="{{id}}"
+                              data-csrf="{{@root.csrf}}"
+                            />
+                            {{else}}
+                           
+                            <img
+                              src="/box (3).svg"
+                              class="card-give-img"
+                              alt=""
+                              data-status="{{status}}"
+                              data-id="{{id}}"
+                              data-csrf="{{@root.csrf}}"
+                            />
+                            {{/if}}
                           </div>
                           <div class="card-actions">
                             <a href=""
                               ><img
-                                src="./settingBook.svg"
+                                src="/settingBook.svg"
                                 alt=""
                                 data-toggle="tooltip"
                                 data-placement="bottom"
                                 title="Редактировать"
                             /></a>
                             <form action="/profile/deleteBook" method="POST">
-                           <input type="hidden" name="_id" value="{{ _id}}">
-                            <button type="submit"
-                              ><img
-                                src="./deleteBook.svg"
-                                alt=""
-                                data-toggle="tooltip"
-                                data-placement="bottom"
-                                title="Удалить книгу"
-                            /></button>
-                            <input type="hidden" name="_csrf" value="{{@root.csrf}}" />
+                              <input type="hidden" name="_id" value="{{id}}" />
+                              <button type="submit">
+                                <img
+                                  src="/deleteBook.svg"
+                                  alt=""
+                                  data-toggle="tooltip"
+                                  data-placement="bottom"
+                                  title="Удалить книгу"
+                                />
+                              </button>
+                              <input
+                                type="hidden"
+                                name="_csrf"
+                                value="{{@root.csrf}}"
+                              />
                             </form>
                           </div>
                         </div>
                       </div>
-                  </div>
+                    </div>
                   </div>
                   {{/each}}
                 </div>
-                   {{else}}
-                      <div class="profile-header">
+                {{else}}
+                <div class="profile-header">
                   <p>Книги еще не добавлены</p>
                 </div>
-                  {{/if}}
+                {{/if}}
               </div>
             </div>
           </div>

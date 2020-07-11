@@ -40,35 +40,42 @@
           <div class="addBook-header">
             <p>Пополните свою библиотеку</p>
           </div>
+
           <div class="addBook-instruction">
             <p>
-             Обязательно прочтите как правильно <strong>Разместить книгу.</strong>
+              Обязательно прочтите как правильно
+              <a href="#instruction">
+              <strong>Разместить книгу.</strong>
+              </a>
             </p>
           </div>
-
+          {{!-- Добавление книги --}}
           <div class="card mb-5">
             <form action="/profile/addBook" method="POST">
-              <div class="row no-gutters">
-                <div class="col-xl-3 col-lg-4  col-md-4 	col-sm-4 col-12 book-img">
-                  <div class="book-img-addImg">
-                    <p>Изменить фото</p>
-                  </div>
+              <div class="row">
+                <div
+                  class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12 book-img"
+                >
                   <img src="/bookTemplate.svg" class="card-img" alt="..." />
                 </div>
-                <div class="col-xl-9 col-lg-8 col-md-8 	col-sm-8 col-12 ">
-                  <div class="card-body" >
+                <div class="col-xl-9 col-lg-8 col-md-8 col-sm-8 col-12">
+                  <div class="card-body">
                     <div class="form-group" id="beforeDescription">
                       <label for="exampleInputPassword1">Название книги</label>
                       <input
                         name="bookName"
-                        maxlength="50"
+                        maxlength="100"
                         type="text"
                         class="form-control"
                         required
                       />
                     </div>
                     <div class="addBook-addOptionsBtn">
-                      <button type="button" class="btn btn-success" id="addDescriptionBtn">
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        id="addDescriptionBtn"
+                      >
                         <img src="/add.svg" width="15px" />Комментарий
                       </button>
                     </div>
@@ -77,7 +84,7 @@
                       <label for="exampleInputPassword1">Автор</label>
                       <input
                         name="author"
-                        maxlength="30"
+                        maxlength="50"
                         type="text"
                         class="form-control"
                         required
@@ -87,7 +94,7 @@
                       <label for="exampleInputPassword1">Жанр</label>
                       <input
                         name="genre"
-                        maxlength="30"
+                        maxlength="50"
                         type="text"
                         class="form-control"
                         required
@@ -95,12 +102,197 @@
                     </div>
                     <input type="hidden" name="_csrf" value="{{csrf}}" />
                     <div class="addBook-addBook">
-                      <button type="submit" class="btn btn-primary">Разместить книгу</button>
+                      <button type="submit" class="btn btn-primary">
+                        Разместить книгу
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      {{!-- Инструкция --}}
+      <div class="container" id="instruction">
+        <div class="row">
+          <div class="col-xl-12 instruction">
+            <div class="instruction-head">
+              <p>Добавь книгу Правильно!</p>
+            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <button
+                    class="btn btn-info collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Общие правила
+                  </button>
+                </div>
+
+                <div
+                  id="collapseOne"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck
+                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                    sunt aliqua put a bird on it squid single-origin coffee
+                    nulla assumenda shoreditch et. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                    Leggings occaecat craft beer farm-to-table, raw denim
+                    aesthetic synth nesciunt you probably haven't heard of them
+                    accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-info collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Заполнение основных полей
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    <div class="card-body-header">
+                      <p>Название книги</p>
+                    </div>
+                    <div class="card-body-instruction">
+                      <p>
+                        Указывая название, обратите внимание на
+                        <strong>правильность</strong> написания. Пишите название
+                        точно такое же, как на <strong>обложке</strong>. Не
+                        забывайте указывать все
+                        <strong>знаки препинания</strong> вместе с названием
+                        книги.
+                      </p>
+                      <div class="form-group" id="beforeDescription">
+                        <label for="exampleInputPassword1"
+                          >Название книги</label
+                        >
+                        <input
+                          name="bookName"
+                          maxlength="100"
+                          type="text"
+                          class="form-control"
+                          value="Война и мир"
+                          readonly
+                          required
+                        />
+                      </div>
+                      <div class="form-group" id="beforeDescription">
+                        <label for="exampleInputPassword1"
+                          >Название книги</label
+                        >
+                        <input
+                          name="bookName"
+                          maxlength="100"
+                          type="text"
+                          class="form-control"
+                          value="Морфий (сборник)"
+                          readonly
+                          required
+                        />
+                      </div>
+                    </div>
+                      <div class="card-body-header">
+                        <p>Автор книги</p>
+                      </div>
+                      <div class="card-body-instruction">
+                        <p>
+                          Указывая автора, сначала напишите
+                          <strong>инициалы</strong>, далее
+                          <strong>фамилию</strong>. Обязательно разделяйте
+                          <strong>пробелами</strong> инициалы и фамилию автора!
+                        </p>
+                        <div class="form-group" id="beforeDescription">
+                          <label for="exampleInputPassword1">Автор</label>
+                          <input
+                            name="bookName"
+                            type="text"
+                            class="form-control"
+                            value="А. С. Пушкин"
+                            
+                            readonly
+                            required
+                          />
+                        </div>
+                        <div class="form-group" id="beforeDescription">
+                          <label for="exampleInputPassword1">Автор</label>
+                          <input
+                            name="bookName"
+                            type="text"
+                            class="form-control"
+                            value="Стивен Кинг"
+                            readonly
+                            required
+                          />
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button
+                        class="btn btn-info collapsed"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Добавление фотографии
+                      </button>
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. 3 wolf moon officia
+                      aute, non cupidatat skateboard dolor brunch. Food truck
+                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                      tempor, sunt aliqua put a bird on it squid single-origin
+                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt
+                      sapiente ea proident. Ad vegan excepteur butcher vice
+                      lomo. Leggings occaecat craft beer farm-to-table, raw
+                      denim aesthetic synth nesciunt you probably haven't heard
+                      of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

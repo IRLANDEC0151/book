@@ -44,14 +44,18 @@
   color: #fff;
   background-color: #252527;
 }
+.profile-hello {
+  margin-top: 3rem;
+}
 .profile-hello p {
   font-size: 4.5rem;
 }
 .profile-header {
+  display: inline-block;
   margin: 4rem 0;
 }
 .profile-header p {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .card {
   border: none;
@@ -91,6 +95,40 @@
 .card-actions img {
   cursor: pointer;
   width: 25px;
+}
+.alert-info {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #085579;
+  float: right;
+  border-radius: 0.5rem;
+}
+.alert-info img {
+  width: 4rem;
+  margin: 0 1rem;
+  position: relative;
+  top: -1rem;
+}
+.alert-success {
+  position: fixed;
+  top: 7rem;
+  z-index: 999;
+  opacity: 0.95;
+  text-align: center;
+}
+.alert-success h4 {
+  font-size: 3rem;
+}
+.alert-success p {
+  font-size: 1.5rem;
+}
+.alert-success span {
+  font-size: 3rem;
+}
+.spinner-border {
+  margin: 1.5rem 0;
+  width: 3rem;
+  height: 3rem;
 }
 .tooltip-inner {
   font-size: 1.5rem;
